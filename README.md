@@ -83,8 +83,14 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 
 ### you may see following error message which usage is reached.
 ```
+[x220@ipa01 rocky-docs]$ make file01
+   /home/x220/github/translate-shell/translate file:///home/x220/github/rocky-docs/greet.txt :zh-tw
+   [ERROR] Google did not return results because rate limiting is in effect
+   [ERROR] Rate limiting
 
+   [x220@ipa01 rocky-docs]$
 ```
+
 ```
 [x220@ipa01 rocky-docs]$ cat /home/x220/github/rocky-docs/greet.txt
 வணக்கம். எப்படி இருக்கீங்க?
