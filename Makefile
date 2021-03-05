@@ -9,7 +9,8 @@ A2PSTMP   = ./tmp
 DOCS      = ./docs
 
 SHELL := /bin/bash
-
+TRANS = ~/.local/bin/translate
+TRANS2 = /home/x220/github/translate-shell/translate
 
 all: pdf
 
@@ -79,4 +80,12 @@ status:
 commit:
 	git commit -am "$(call args, Automated lazy commit message without details, read the code change)"  && git push
 
+sc2tc: sc2tc01
 
+sc2tc01:
+	${TRANS}  "服务器多站点设置" -d zh-tw -s zh-cn
+
+filedemo: file01
+
+file01:
+	${TRANS2} file:///home/x220/github/rocky-docs/greet.txt :zh-tw

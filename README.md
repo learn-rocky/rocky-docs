@@ -81,6 +81,10 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 
 ## default using google translate engine (beware of transaltion rate limit)
 
+### you may see following error message which usage is reached.
+```
+
+```
 ```
 [x220@ipa01 rocky-docs]$ cat /home/x220/github/rocky-docs/greet.txt
 வணக்கம். எப்படி இருக்கீங்க?
@@ -89,6 +93,7 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 你好。你好吗？
 [x220@ipa01 translate-shell]$
 ```
+
 ### Now translate an Enlish file to ZH-TW language
 
 ```
