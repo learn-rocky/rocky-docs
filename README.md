@@ -84,9 +84,14 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 ```
 [x220@ipa01 rocky-docs]$ cat /home/x220/github/rocky-docs/greet.txt
 வணக்கம். எப்படி இருக்கீங்க?
-[x220@ipa01 rocky-docs]$ 
+[x220@ipa01 rocky-docs]$
 [x220@ipa01 translate-shell]$ trans file:///home/x220/github/rocky-docs/greet.txt :zh-tw
 你好。你好吗？
+[x220@ipa01 translate-shell]$
+```
+### Now translate an Enlish file to ZH-TW language
+
+```
 [x220@ipa01 translate-shell]$ trans file:///home/x220/github/rocky-docs/apache-sites-enabled.english.md  :zh-tw
 ---
 标题：“ Apache Web服务器多站点设置”
