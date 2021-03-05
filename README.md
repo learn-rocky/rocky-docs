@@ -53,5 +53,15 @@ pip3 install googletrans==3.1.0a0
     [en] Server multi-site settings
     [pron.] None
 [x220@ipa01 rocky-docs]$
-```    
+```
 
+## SC to TC
+
+```
+[x220@ipa01 rocky-docs]$ translate  "服务器多站点设置" -d zh-tw
+[zh-CN] 服务器多站点设置
+    ->
+[zh-tw] 服務器多站點設置
+[pron.] Fúwùqì duō zhàn diǎn shèzhì
+[x220@ipa01 rocky-docs]$ 
+```
