@@ -52,11 +52,12 @@ pip3 install googletrans==3.1.0a0
 
 ## trans version info
 ```
-[x220@ipa01 rocky-docs]$ trans -V
-Translate Shell       0.9.6.12-git:468841e
+[x220@ipa01 rocky-docs]$ make trans-ver
+/home/x220/github/translate-shell/translate -V
+Translate Shell       0.9.6.12-git:b8b8df0
 
 platform              Linux
-terminal type         dumb
+terminal type         xterm
 bi-di emulator        [N/A]
 gawk (GNU Awk)        5.1.0
 fribidi (GNU FriBidi) 1.0.10
@@ -75,7 +76,6 @@ theme                 default
 init file             [NONE]
 
 Report bugs to:       https://github.com/soimort/translate-shell/issues
-
 [x220@ipa01 rocky-docs]$ 
 ```
 

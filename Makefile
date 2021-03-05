@@ -89,3 +89,5 @@ filedemo: file01
 
 file01:
 	${TRANS2} file:///home/x220/github/rocky-docs/greet.txt :zh-tw
+trans-ver:
+	${TRANS2} -V
