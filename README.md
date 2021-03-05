@@ -1,5 +1,8 @@
 # SAT: Software Assissted Translation
 
+or semi-automated translation per Calder Sheagren.
+
+
 Save time in most case if using good tranlation engine.
 
 ```
