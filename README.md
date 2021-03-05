@@ -6,32 +6,10 @@ or semi-automated translation per Calder Sheagren.
 Save time in most case if using good tranlation engine.
 
 ```
-a.txt --> SAT --> a.sat.txt--> Human Brain --> Final.txt
+a.txt --> SAT --> a.sat.txt--> Human Brain --> a.final.txt
 
 ```
 
-# opencc: Using opencc for S.C. and T.C. conversion
-
-```
-dnf install -y opencc
-```
-## python version
-
-```
-pip3  install opencc-python-reimplemented
-```
-
-# convert TC demo text into SC
-
-```
- python3 -m opencc -c t2s -i demo-opencc-origin.tc.md -o demo-opencc-origin.sc.md
-```
-
-# convert SC to TC
-
-```
- python3 -m opencc -c s2t -i apache-sites-enabled.yangxuan.sc.md -o apache-sites-enabled.opencc.sc.md
-```
 
 # Using google translate command line tool
 
@@ -215,4 +193,27 @@ ln -s /etc/httpd/sites-available/com.wiki.www / etc / httpd / sites-enabled /`
 
 现在只需使用systemctl start httpd来启动httpd。或者，如果已经运行，则重新启动它：`systemctl restart httpd`，并假设网络服务重新启动，您现在可以在新站点上进行一些测试。
 [x220@ipa01 translate-shell]$
+```
+
+# Using opencc for S.C. and T.C. conversion
+
+```
+dnf install -y opencc
+```
+## python version
+
+```
+pip3  install opencc-python-reimplemented
+```
+
+## convert TC demo text into SC
+
+```
+ python3 -m opencc -c t2s -i demo-opencc-origin.tc.md -o demo-opencc-origin.sc.md
+```
+
+## convert SC to TC
+
+```
+ python3 -m opencc -c s2t -i apache-sites-enabled.yangxuan.sc.md -o apache-sites-enabled.opencc.sc.md
 ```
