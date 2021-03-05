@@ -71,7 +71,38 @@ pip3 install googletrans==3.1.0a0
 
 
 # Using translate-shell
+
+## trans version info
+```
+[x220@ipa01 rocky-docs]$ trans -V
+Translate Shell       0.9.6.12-git:468841e
+
+platform              Linux
+terminal type         dumb
+bi-di emulator        [N/A]
+gawk (GNU Awk)        5.1.0
+fribidi (GNU FriBidi) 1.0.10
+audio player          [NOT INSTALLED]
+terminal pager        less
+web browser           xdg-open
+user locale           en_US.UTF-8 (English)
+home language         en
+source language       auto
+target language       en
+translation engine    google
+proxy                 [NONE]
+user-agent            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+ip version            [DEFAULT]
+theme                 default
+init file             [NONE]
+
+Report bugs to:       https://github.com/soimort/translate-shell/issues
+
+[x220@ipa01 rocky-docs]$ 
+```
+
 ## default using google translate engine (beware of transaltion rate limit)
+
 ```
 [x220@ipa01 rocky-docs]$ cat /home/x220/github/rocky-docs/greet.txt
 வணக்கம். எப்படி இருக்கீங்க?
