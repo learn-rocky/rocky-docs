@@ -148,31 +148,7 @@ Rocky Linux提供了许多方法来设置网站。这只是使用Apache的一种
 
 阿帕奇
 <VirtualHost *：80>
-ServerName www.wiki.com
-ServerAdmin用户名@ rockylinux.org
-Did you mean: DocumentRoot /var/www/subdomains/com.wiki.www/html
-DocumentRoot /var/www/sub-domains/com.wiki.www/html
-DirectoryIndex index.php index.htm index.html
-别名/ icons / / var / www / icons /
-Did you mean: # ScriptAlias /cgi-bin/ /var/www/subdomains/com.wiki.www/cgi-bin/
-＃ScriptAlias / cgi-bin / /var/www/sub-domains/com.wiki.www/cgi-bin/
-
-CustomLog“ /var/log/httpd/com.wiki.www-access_log”组合
-Did you mean: Error_Log "/var/log/httpd/com.wiki.www-error_log"
-ErrorLog“ /var/log/httpd/com.wiki.www-error_log”
-
-Did you mean: \u003cDirectory /var/www/subdomains/com.wiki.www/html\u003e
-<目录/var/www/sub-domains/com.wiki.www/html>
-选项-ExecCGI-索引
-AllowOverride无
-
-拒绝订单，允许
-全部拒绝
-全部允许
-
-满足所有人
-</目录>
-</ VirtualHost>
+<snipped>
 ```
 创建文件后，我们需要使用以下命令写入（保存）：shift：wq
 
@@ -205,6 +181,7 @@ ln -s /etc/httpd/sites-available/com.wiki.www / etc / httpd / sites-enabled /`
 ```
 dnf install -y opencc
 ```
+
 ## python version
 
 ```
