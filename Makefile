@@ -25,21 +25,13 @@ versionfile:
 	echo "source build date:" $(DATE) >> etc/version
 
 clean: cleantmp
-	-rm -f  MANIFEST
 	-rm -rf dist/ build/
 	-rm -rf *~
-	-rm -rf rpm-build/
-	-rm -rf deb-build/
-	-rm -rf docs/*.1
-	-rm -f etc/version
 	-find . -type f -name *.pyc -exec rm -f {} \;
 	-find . -type f -name *~  -exec rm -f {} \;
-	-find profiles_*  -type f -name "__init__.py"  -exec rm -rf {} \;
-	-find profiles_*  -type d  -name "__pycache__"  -exec rm -rf {} \;
 
 clean_hard:
 	-rm -rf $(shell $(PYTHON) -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")/adagios 
-
 
 clean_hardest: clean_rpms
 
