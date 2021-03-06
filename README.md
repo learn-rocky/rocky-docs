@@ -10,6 +10,11 @@ a.txt --> SAT --> a.sat.txt--> Human Brain --> a.final.txt
 
 ```
 
+# Tools used in this doc
+
+* Google translate shell: from English to other languages.
+* opencc : for conversion between SC and TC.
+
 
 # Using google translate command line tool
 
