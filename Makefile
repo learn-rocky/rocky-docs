@@ -12,7 +12,7 @@ SHELL := /bin/bash
 TRANS = ~/.local/bin/translate
 TRANS2 = /home/x220/github/translate-shell/translate
 
-all: pdf
+all: sc2tc
 
 #https://stackoverflow.com/questions/6273608/how-to-pass-argument-to-makefile-from-command-line
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
@@ -91,3 +91,6 @@ file01:
 	${TRANS2} file:///home/x220/github/rocky-docs/greet.txt :zh-tw
 trans-ver:
 	${TRANS2} -V
+testcmds:
+	@which opencc
+	@which translate

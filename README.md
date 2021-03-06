@@ -1,156 +1,80 @@
-# SAT: Software Assissted Translation
+# Rocky Linux Documentation How-To Contribute Guide
 
-or semi-automated translation per Calder Sheagren.
+## Introduction
 
+So you want to contribute to the Rocky Linux documentation, but aren't sure how to go about that? You've come to the right place. We're excited to have you on board with us. 
 
-Save time in most case if using good tranlation engine.
+One of our big goals for Rocky is to have not just good, but GREAT documentation, and we can't do it alone. This document will get you started, and will (hopefully) allay any worries you might have about doing so. We're always here to help, too, so feel free to ask questions and join in the conversation.
 
-```
-a.txt --> SAT --> a.sat.txt--> Human Brain --> a.final.txt
+## Documentation Subject Matter
 
-```
+If you can dream it — or better yet, have done it before — then your subject matter is probably important to the Rocky Linux documentation project. Once a build is finally out there, then we expect that documentation will really start to explode, but we want to be ready with some things already documented out of the gate. 
 
-# Tools used in this doc
+This is where you come in — both now and in the future. If you have experience with anything Linux-related, and can translate that to Rocky Linux, then we want you to start writing!
 
-* Google translate shell: from English to other languages.
-* opencc : for conversion between SC and TC.
+## Where to Start
 
+While you can create documentation in any format, the preferred format is Markdown. You can easily create documents in Markdown, plus Markdown is super-easy to learn. The best way to get started with Markdown is to have a Markdown editor installed and read the tutorial. You can create Markdown files with any text editor, but most Markdown editors allow you to preview what you've input already, so they can be very helpful. 
 
-# Using google translate command line tool
+### Markdown Editor
 
-## install
-pip3 install googletrans==3.1.0a0
+As we've said already, the best way to create Markdown files, particularly if you've not done it before, is to grab an editor for the operating system that you use on your PC or Laptop. A simple web search for "Markdown editors" will show you a bunch to choose from. 
 
-```
-[x220@ipa01 py-googletrans]$ translate "veritas lux mea" -s la -d en
-[la] veritas lux mea
-    ->
-    [en] The truth is my light
-    [pron.] The truth is my light
-[x220@ipa01 py-googletrans]$
-```
+Pick one that is compatible with your OS and get started. This particular How-To doc was created with [ReText](https://github.com/retext-project/retext), a cross-platform Markdown editor. Again, if you'd prefer to create your Markdown files in your own text editor that you are already familiar with, that's no problem at all.
 
-## demo
+#### Alternate Markdown Editors
 
-```
-[x220@ipa01 rocky-docs]$ translate  "服务器多站点设置"
-    [zh-CN] 服务器多站点设置
-    ->
-    [en] Server multi-site settings
-    [pron.] None
-[x220@ipa01 rocky-docs]$
-```
+ReText is good, but if you feel like exploring your other options, there are a few:
 
-## SC to TC
+* [Zettlr](https://www.zettlr.com) - Free, cross-platform, and open source
+* [Mark Text](https://marktext.app) - Free, cross-platform, and open source
+* [ghostwriter](https://wereturtle.github.io/ghostwriter/) - Free, Windows and Linux, open source
+* [Remarkable](https://remarkableapp.github.io) - Linux-only, open source
+* [Typora](https://typora.io) - Free and cross-platform, but *not* open source
 
-```
-[x220@ipa01 rocky-docs]$ translate  "服务器多站点设置" -d zh-tw
-[zh-CN] 服务器多站点设置
-    ->
-[zh-tw] 服務器多站點設置
-[pron.] Fúwùqì duō zhàn diǎn shèzhì
-[x220@ipa01 rocky-docs]$ 
-```
+### Markdown Tutorial
 
+You can get a good feel for how to write Markdown files, by taking a look at [Mastering Markdown](https://guides.github.com/features/mastering-markdown/). This online resource will get you up-to-speed in no time. 
 
-# Using translate-shell
+## Using Git
 
-## trans version info
-```
-[x220@ipa01 rocky-docs]$ make trans-ver
-/home/x220/github/translate-shell/translate -V
-Translate Shell       0.9.6.12-git:b8b8df0
+Rocky Linux, like loads of other projects out there, uses "git" to manage its code and files, including documentation files. This tutorial assumes a very basic knowledge of git, and how it works. The second example also presupposes familiarity with the command line.
 
-platform              Linux
-terminal type         xterm
-bi-di emulator        [N/A]
-gawk (GNU Awk)        5.1.0
-fribidi (GNU FriBidi) 1.0.10
-audio player          [NOT INSTALLED]
-terminal pager        less
-web browser           xdg-open
-user locale           en_US.UTF-8 (English)
-home language         en
-source language       auto
-target language       en
-translation engine    google
-proxy                 [NONE]
-user-agent            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
-ip version            [DEFAULT]
-theme                 default
-init file             [NONE]
+The steps listed below will get you started. In the meantime (and until we inevitably develop our own guide), you can learn Git in-depth with this [free Udacity course](https://www.udacity.com/course/version-control-with-git--ud123). If you don't have the time for that, here's [a shorter guide](https://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html).
 
-Report bugs to:       https://github.com/soimort/translate-shell/issues
-[x220@ipa01 rocky-docs]$ 
-```
+In order to submit your text, we ask that you create a GitHub account. When you are ready to submit your written documentation for approval, follow these easy steps:
 
-## default using google translate engine (beware of transaltion rate limit)
+### With the GitHub GUI
 
-### you may see following error message which usage is reached.
-```
-[x220@ipa01 rocky-docs]$ make file01
-   /home/x220/github/translate-shell/translate file:///home/x220/github/rocky-docs/greet.txt :zh-tw
-   [ERROR] Google did not return results because rate limiting is in effect
-   [ERROR] Rate limiting
+Most tasks can be completed from the web GUI on GitHub. Here's an example of adding a file you've created on your local machine to the Rocky Linux documentation GitHub repository.
 
-   [x220@ipa01 rocky-docs]$
-```
+1. Login to your GitHub account.
+2. Navigate to the Rocky Linux Documentation repository at: [https://github.com/rocky-linux/documentation.git](https://github.com/rocky-linux/documentation.git)
+3. You should be on the "Main" branch, so check the drop down label down in the middle section, just to be sure you are. Your document might not ultimately end up in the "Main" branch, but admins will move it around to where it logically fits later.  
+On the right-hand side of the page, click the "Fork" button, which will create your own copy of the documentation.
+4. In the middle of the page on the forked copy, just to the left of the Green "Code" drop down, is an "Add file" button. Click this and choose the "Upload files" option.
+5. This will give you a way to either drag and drop files here, or to browse to them on your computer. Go ahead and use the method you are most comfortable with.
+6. Once the file is uploaded, the next thing you need to do is create a Pull Request. This request lets the upstream administrators know that you've got a new file (or files) that you would like them to merge with the master.  
+Click on "Pull Request" in the upper-left of the screen.
+7. Write a brief message in the "Write" section letting the administrators know what you've done. (New document, revision, suggested change, etc.,) then submit your change.
 
-```
-[x220@ipa01 rocky-docs]$ cat /home/x220/github/rocky-docs/greet.txt
-வணக்கம். எப்படி இருக்கீங்க?
-[x220@ipa01 rocky-docs]$
-[x220@ipa01 translate-shell]$ trans file:///home/x220/github/rocky-docs/greet.txt :zh-tw
-你好。你好吗？
-[x220@ipa01 translate-shell]$
-```
+### From the Git Command-Line
 
-### Now translate an Enlish file to ZH-TW language
+If you prefer to run Git locally on your own machine, you can clone the Rocky Linux Documentation repository, make changes, and then do a commit changes afterwards. To make things super-easy, do steps 1-3 on *From Git Gui* above then:
 
-```
-[x220@ipa01 translate-shell]$ trans file:///home/x220/github/rocky-docs/apache-sites-enabled.english.md  :zh-tw
----
-标题：“ Apache Web服务器多站点设置”
----
+1. Git clone the repository: `git clone https://github.com/your_fork_name/documentation.git`
+2. Now, on your own machine, add files to the directory.  
+Example: `mv /home/myname/help.md /home/myname/documentation/`
+3. Next, run git add for that file name.  
+Example:  `git add help.md`
+4. Now, run git commit for the changes you have made.  
+Example: `git commit -m "Added the help.md file"
+5. Next, push your changes to your forked repository: `git push https://github.com/your_fork_name/documentation main`
+6. Next, we repeat step 6 and 7 above: ...create a Pull Request. This request lets the upstream administrators know that you've got a new file (or files) that you would like them to merge with the master branch. Click on "Pull Request" in the upper-left of the screen
 
-＃Apache Web服务器多站点设置
+Once all of that is done, you simply wait for confirmation that your request has been successfully merged. (Or not, as the case may be.)
 
-Rocky Linux提供了许多方法来设置网站。这只是使用Apache的一种方法，旨在用作单个服务器上的多站点设置。尽管此方法是为多站点服务器设计的，但它也可以作为单个站点服务器的基本配置。
+## Keep Up With The Conversation
 
-历史事实：此服务器设置似乎是从基于Debian的系统开始的，但它完全适合于任何运行Apache的Linux操作系统。
+If you haven't already, join the conversation on the [Rocky Linux Mattermost Channel](https://chat.rockylinux.org/rocky-linux/) and stay up-to-date with what is going on. Join the "Documentation" channel, or any other channel you are interested in. We'd be glad to have you with us!
 
-##您需要什么
-*运行Rocky Linux的服务器
-*命令行和文本编辑器的知识（此示例使用* vi *，但可以适应您喜欢的编辑器。）
-*如果您想了解vi文本编辑器，请[这里是一个方便的教程]（https://www.tutorialspoint.com/unix/unix-vi-editor.htm）。
-*有关安装和运行Web服务的基本知识
-
-<snipped>
-
-[x220@ipa01 translate-shell]$
-
-```
-
-# Using opencc for S.C. and T.C. conversion
-
-```
-dnf install -y opencc
-```
-
-## python version
-
-```
-pip3  install opencc-python-reimplemented
-```
-
-## convert TC demo text into SC
-
-```
- python3 -m opencc -c t2s -i demo-opencc-origin.tc.md -o demo-opencc-origin.sc.md
-```
-
-## convert SC to TC
-
-```
- python3 -m opencc -c s2t -i apache-sites-enabled.yangxuan.sc.md -o apache-sites-enabled.opencc.sc.md
-```
