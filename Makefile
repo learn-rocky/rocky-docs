@@ -47,10 +47,6 @@ ps: cleantmp
 	$(foreach var, $(SRC1), ${A2PS2S1C} $(var) --output=${A2PSTMP}/$(var).ps ;)
 	$(foreach var, $(SRC2), ${A2PS2S1C} $(var) --output=${A2PSTMP}/$(var).ps ;)
 
-allpdf: pdf
-	make -C profiles_api pdf
-	make -C profiles_project pdf
-
 pdf: ps
 	$(foreach var, $(SRC1), (cd ${A2PSTMP};ps2pdf $(var).ps $(var).pdf);)
 	$(foreach var, $(SRC2), (cd ${A2PSTMP};ps2pdf $(var).ps $(var).pdf);)
@@ -59,8 +55,6 @@ pdf: ps
 
 tree: clean
 	tree -L 4 > ${PROJECT_NAME}-dir-layout.txt
-
-
 status:
 	git status
 commit:
@@ -75,10 +69,12 @@ tc2sc:
 sc2tc:
 	@echo "Traditonal Chinese to Simplified Chinese"
 
-filedemo: file01
-
+demo: sc2tc01 file01
+	@echo
 file01:
-	${TRANS2} file:///home/x220/github/rocky-docs/greet.txt :zh-tw
+	${TRANS2} file://./stage/greet.txt :zh-tw
+	${TRANS2} file://./stage/greet.txt :zh-cn
+
 trans-ver:
 	${TRANS2} -V
 testcmds:
