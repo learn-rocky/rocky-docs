@@ -12,23 +12,20 @@ SHELL := /bin/bash
 TRANS = ~/.local/bin/translate
 TRANS2 = /home/x220/github/translate-shell/translate
 
-all: sc2tc
+
 # enable makefile to accept argument after command
 #https://stackoverflow.com/questions/6273608/how-to-pass-argument-to-makefile-from-command-line
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 %:
 	@:
 
+all: help
+
 versionfile:
 	echo "version:" $(VERSION) > etc/version
 	echo "release:" $(RELEASE) >> etc/version
 	echo "source build date:" $(DATE) >> etc/version
 
-clean: cleantmp
-	-rm -rf dist/ build/
-	-rm -rf *~
-	-find . -type f -name *.pyc -exec rm -f {} \;
-	-find . -type f -name *~  -exec rm -f {} \;
 
 clean_hard:
 	-rm -rf $(shell $(PYTHON) -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")/adagios 
@@ -89,3 +86,55 @@ trans-ver:
 testcmds:
 	@which opencc
 	@which translate
+
+help:
+	@echo "Usage: make <target>"
+	@echo
+	@echo "Available targets are:"
+	@echo "  help                   show this text"
+	@echo "  clean                  clean the mess"
+	@echo "  sc2tc01                demostrate S.C. to T.C."
+	@echo "  print_release          print release how it should look like with"
+	@echo "                         with the given parameters"
+	@echo "  source                 create the source tarball suitable for"
+	@echo "                         packaging"
+	@echo "  srpm                   create the SRPM"
+	@echo "  copr_build             create the COPR build using the COPR TOKEN"
+	@echo "                         - default path is: $(_COPR_CONFIG)"
+	@echo "                         - can be changed by the COPR_CONFIG env"
+	@echo "  install-deps           create python virtualenv and install there"
+	@echo "                         leapp-repository with dependencies"
+	@echo "  install-deps-fedora    create python virtualenv and install there"
+	@echo "                         leapp-repository with dependencies for Fedora OS"
+	@echo "  lint                   lint source code"
+	@echo "  test                   lint source code and run tests"
+	@echo "  test_no_lint           run tests without linting the source code"
+	@echo ""
+	@echo "Targets test, lint and test_no_lint support environment variables ACTOR and"
+	@echo "TEST_LIBS."
+	@echo "If ACTOR=<actor> is specified, targets are run against the specified actor."
+	@echo "If TEST_LIBS=y is specified, targets are run against shared libraries."
+	@echo ""
+	@echo ""
+	@echo "Possible use:"
+	@echo "  make <target>"
+	@echo "  PR=5 make <target>"
+	@echo "  MR=6 make <target>"
+	@echo "  PR=7 SUFFIX='my_additional_suffix' make <target>"
+	@echo "  MR=6 COPR_CONFIG='path/to/the/config/copr/file' make <target>"
+	@echo "  ACTOR=<actor> TEST_LIBS=y make test"
+	@echo ""
+
+clean:
+	@echo "--- Clean repo ---"
+	@rm -rf packaging/{sources,SRPMS,tmp}/
+	@rm -rf build/ dist/ *.egg-info .pytest_cache/
+	@find . -name 'leapp.db' | grep "\.leapp/leapp.db" | xargs rm -f
+	@find . -name '__pycache__' -exec rm -fr {} +
+	@find . -name '*.pyc' -exec rm -f {} +
+	@find . -name '*.pyo' -exec rm -f {} +
+	-rm -rf dist/ build/
+	-rm -rf *~
+	-find . -type f -name *.pyc -exec rm -f {} \;
+	-find . -type f -name *~  -exec rm -f {} \;
+
