@@ -5,7 +5,7 @@
 Writer --> a.txt --> SAT --> a.sat.txt--> Human Brain --> a.final.txt
 
 ```
-* Direct translation by human translator.
+* Direct human translation.
 ```
 Writer --> a.txt --> Human Brain --> a.final.txt
 
