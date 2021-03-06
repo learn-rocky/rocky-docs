@@ -1,20 +1,19 @@
-# WHAT: SAT(Software Assissted Translation)
+# WHAT: Rocky CAT(Computer Assisted Translation)
 
-* semi-automated translation per Calder Sheagren.
 ```
-Writer --> a.txt --> SAT --> a.sat.txt--> Human Brain --> a.final.txt
+Human writer --> a.txt --> SAT --> a.sat.txt--> Human Brain --> a.final.txt
 
 ```
 * Direct human translation.
-```
-Writer --> a.txt --> Human Brain --> a.final.txt
 
+```
+Human writer --> a.txt --> Human Brain --> a.final.txt
 ```
 
 
 # WHY:
 * Save time in most case if using good tranlation engine.
-* Automate repeatable tasks as much as possible
+* Automating  repeatable tasks as much as possible
 
 
 # Tools used in this doc

@@ -69,12 +69,21 @@ tc2sc:
 sc2tc:
 	@echo "Traditonal Chinese to Simplified Chinese"
 
-demo: sc2tc01 file01
+demo: sc2tc01 file01 guide-1-3-chinese guide-1-3-japanese
 	@echo
 file01:
 	${TRANS2} file://./stage/greet.txt :zh-tw
 	${TRANS2} file://./stage/greet.txt :zh-cn
 
+guide-1-3-chinese:
+	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :zh-tw
+	${TRANS2} file://./docs-style-guide/sample-documentation/beginner-docs.md   :zh-cn
+	${TRANS2} file://./docs-style-guide/sample-documentation/simplified-docs.md :zh-cn
+
+guide-1-3-japanese:
+	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :jp
+#	${TRANS2} file://./docs-style-guide/sample-documentation/beginner-docs.md   :jp
+#	${TRANS2} file://./docs-style-guide/sample-documentation/simplified-docs.md :jp
 trans-ver:
 	${TRANS2} -V
 testcmds:
