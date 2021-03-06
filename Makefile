@@ -58,7 +58,7 @@ tree: clean
 status:
 	git status
 commit:
-	git commit -am "$(call args, Automated lazy commit message without details, read the code change)"  && git push
+	git commit -am "$(call args, Automated commit message without details, Please read the code difference)"  && git push
 
 sc2tc: sc2tc01
 

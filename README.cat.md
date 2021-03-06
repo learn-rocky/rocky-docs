@@ -160,3 +160,6 @@ pip3  install opencc-python-reimplemented
 ```
  python3 -m opencc -c s2t -i apache-sites-enabled.yangxuan.sc.md -o apache-sites-enabled.opencc.sc.md
 ```
+
+# References:
+* https://en.wikipedia.org/wiki/Computer-assisted_translation
