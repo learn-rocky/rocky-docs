@@ -1,8 +1,10 @@
-# SAT: Software Assissted Translation
+# WHAT: SAT(Software Assissted Translation)
 
-or semi-automated translation per Calder Sheagren.
+  or semi-automated translation per Calder Sheagren.
 
-Save time in most case if using good tranlation engine.
+# WHY:
+* Save time in most case if using good tranlation engine.
+* Automate repeatable tasks as much as possible
 
 ```
 a.txt --> SAT --> a.sat.txt--> Human Brain --> a.final.txt
