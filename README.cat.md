@@ -1,5 +1,6 @@
-# WHAT: Rocky CAT(Computer Assisted Translation)
+# WHAT: Rocky CAT
 
+* Computer Assisted Translation on Rocky
 ```
 Human writer --> a.txt --> SAT --> a.sat.txt--> Human Brain --> a.final.txt
 
