@@ -2,7 +2,7 @@
 
 * Computer Assisted Translation on Rocky
 ```
-Human writer --> a.txt --> SAT --> a.sat.txt--> Human Brain --> a.final.txt
+Human writer --> a.txt --> CAT --> a.sat.txt--> Human Brain --> a.final.txt
 
 ```
 * Direct human translation.
