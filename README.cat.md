@@ -1,14 +1,14 @@
 # WHAT: Rocky CAT
+* Direct human translation.
+
+```
+Human writer --> a.txt --> Human Brain --> a.final.txt
+```
 
 * Computer Assisted Translation on Rocky
 ```
 Human writer --> a.txt --> CAT --> a.sat.txt--> Human Brain --> a.final.txt
 
-```
-* Direct human translation.
-
-```
-Human writer --> a.txt --> Human Brain --> a.final.txt
 ```
 
 
