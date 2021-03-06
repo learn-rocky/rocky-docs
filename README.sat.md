@@ -1,15 +1,21 @@
 # WHAT: SAT(Software Assissted Translation)
 
-  or semi-automated translation per Calder Sheagren.
+* semi-automated translation per Calder Sheagren.
+```
+Writer --> a.txt --> SAT --> a.sat.txt--> Human Brain --> a.final.txt
+
+```
+* Direct translation by human translator.
+```
+Writer --> a.txt --> Human Brain --> a.final.txt
+
+```
+
 
 # WHY:
 * Save time in most case if using good tranlation engine.
 * Automate repeatable tasks as much as possible
 
-```
-a.txt --> SAT --> a.sat.txt--> Human Brain --> a.final.txt
-
-```
 
 # Tools used in this doc
 
