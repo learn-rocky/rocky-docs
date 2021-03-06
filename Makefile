@@ -61,12 +61,6 @@ tree: clean
 	tree -L 4 > ${PROJECT_NAME}-dir-layout.txt
 
 
-tc2sc:
-	@echo "Simplified Chinese to Traditonal Chinese"
-
-sc2tc:
-	@echo "Traditonal Chinese to Simplified Chinese"
-
 status:
 	git status
 commit:
@@ -76,6 +70,10 @@ sc2tc: sc2tc01
 
 sc2tc01:
 	${TRANS}  "服务器多站点设置" -d zh-tw -s zh-cn
+tc2sc:
+	@echo "Simplified Chinese to Traditonal Chinese"
+sc2tc:
+	@echo "Traditonal Chinese to Simplified Chinese"
 
 filedemo: file01
 
