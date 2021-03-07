@@ -154,22 +154,29 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
  [ERROR] Rate limiting
 [me@fedora01t rocky-docs]$
 ```
-
+* Translate text in file examples.
 ```
-[me@fedora01t rocky-docs]$ cat /home/me/github/rocky-docs/greet.txt
-வணக்கம். எப்படி இருக்கீங்க?
-[me@fedora01t rocky-docs]$
-[me@fedora01t translate-shell]$ trans file:///home/me/github/rocky-docs/greet.txt :zh-tw
+
+[me@fedora01t rocky-docs]$ trans  file:///home/me/github/rocky-docs/stage/greet.txt  :zh-tw
 你好。你好吗？
-[me@fedora01t translate-shell]$
+[me@fedora01t rocky-docs]$ trans  file:///home/me/github/rocky-docs/stage/greet.txt  :zh-cn
+你好。你好吗？
+[me@fedora01t rocky-docs]$ trans  file:///home/me/github/rocky-docs/stage/greet.txt  :ja
+こんにちは。お元気ですか？
+[me@fedora01t rocky-docs]$ trans  file:///home/me/github/rocky-docs/stage/greet.txt  :en
+Hello. How are you?
+[me@fedora01t rocky-docs]$
+
 ```
 
-### Now translate an Enlish file to ZH-TW language
+### Now translate rocky howto guides to  ZH-TW language
+
+Following is showing zh-cn output , not zh-tw as expected.
 
 ```
-[me@fedora01t translate-shell]$ trans file:///home/me/github/rocky-docs/apache-sites-enabled.english.md  :zh-tw
+[me@fedora01t ]$ trans file:///home/me/github/rocky-docs/apache-sites-enabled.english.md  :zh-tw
 ---
-标题：“ Apache Web服务器多站点设置”
+标题：“ Apache Web服务器多站点设置
 ---
 
 ＃Apache Web服务器多站点设置
@@ -186,14 +193,14 @@ Rocky Linux提供了许多方法来设置网站。这只是使用Apache的一种
 
 <snipped>
 
-[me@fedora01t translate-shell]$
+[me@fedora01t ]$
 
 ```
 
-# Using opencc for S.C. and T.C. conversion
+# Using opencc library for S.C. and T.C. conversion
 
 ```
-dnf install -y opencc
+sudo dnf install -y opencc
 ```
 
 ## opencc python front end
@@ -202,7 +209,7 @@ dnf install -y opencc
 pip3  install opencc-python-reimplemented
 ```
 
-## convert zh-tw demo text into zh-cn
+## convert zh-tw file into zh-cn
 
 
 ```
@@ -216,4 +223,6 @@ pip3  install opencc-python-reimplemented
 ```
 
 # References:
+* opencc
+* opencc-python-reimplemented
 * https://en.wikipedia.org/wiki/Computer-assisted_translation
