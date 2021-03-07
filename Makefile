@@ -5,14 +5,17 @@ NEWRELEASE	= $(shell echo $$(($(RELEASE) + 1)))
 TOPDIR = $(shell pwd)
 DIRS	= profiles_api profiles_project
 A2PS2S1C  = /bin/a2ps --sides=2 --medium=Letter --columns=1 --portrait --line-numbers=1 --font-size=8
-A2PSTMP   = ./tmp
+A2PSTMP   = /tmp
 DOCS      = ./docs
 
 SHELL := /bin/bash
-TRANS = ~/.local/bin/translate
-TRANS2 = /home/x220/github/translate-shell/translate
+#TRANS = ~/.local/bin/translate
+#TRANS2 = /home/x220/github/translate-shell/translate
+TRANS = /usr/bin/trans
+TRANS2 = /usr/bin/trans
+
 DIA=/usr/bin/dia --nosplash --export=/tmp/t.png inplace-workflow.dia
-all: sc2tc
+
 
 # enable makefile to accept argument after command
 #https://stackoverflow.com/questions/6273608/how-to-pass-argument-to-makefile-from-command-line
@@ -35,8 +38,8 @@ clean_hardest: clean_rpms
 
 #Ref: https://stackoverflow.com/questions/1490949/how-to-write-loop-in-a-makefile
 # MANIFEST  
-SRC1= Makefile reqirements.txt restapi-readme.md 
-SRC2= manage.py 
+SRC1= Makefile README.md
+SRC2= README.cat.md
 #SRC2= manage.py profiles_projects-dir-layout.txt
 
 cleantmp:
@@ -74,7 +77,7 @@ file01:
 	${TRANS2} file://./stage/greet.txt :zh-cn
 
 guide-1-3-chinese:
-	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :zh-tw
+	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :zh-tw 
 	${TRANS2} file://./docs-style-guide/sample-documentation/beginner-docs.md   :zh-cn
 	${TRANS2} file://./docs-style-guide/sample-documentation/simplified-docs.md :zh-cn
 
