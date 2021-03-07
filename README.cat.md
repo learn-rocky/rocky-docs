@@ -154,7 +154,7 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
  [ERROR] Rate limiting
 [me@fedora01t rocky-docs]$
 ```
-* Translate Greek text in file to other languages.
+* Translate greeting  text in file to other languages.
 ```
 [me@fedora01t ]$ cat /home/me/github/rocky-docs/stage/greet.txt
 வணக்கம். எப்படி இருக்கீங்க?
