@@ -181,7 +181,7 @@ Following is returning zh-cn characters, not zh-tw as specified.
 
 ＃Apache Web服务器多站点设置
 
-Rocky Linux提供了许多方法来设置网站。这只是使用Apache的一种方法，旨在用作单个服务器上的多站点设置。尽管此方法是为多站点服务器设计的，但它也可以作为单个站点服务器的基本配置。
+Rocky Linux提供了许多方法来设置网站。这只是使用Apache的一种方法，旨在用作单个服务器上的多站点设置。<snipped>
 
 历史事实：此服务器设置似乎是从基于Debian的系统开始的，但它完全适合于任何运行Apache的Linux操作系统。
 
