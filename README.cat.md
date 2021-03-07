@@ -1,14 +1,21 @@
 # WHAT: Rocky CAT
-* Direct human translation.
+
+This guide is for using C.A.T. software to pre-process source language into a raw destination laguage.
+Raw text still need to be reviewed and corrected by human translator.
+Rocky document translator decides which approaches is best for their case.
+
+* Direct human translation path.
+
 
 ```
 Human writer --> a.txt --> Human Brain --> a.final.txt
 ```
 
-* Computer Assisted Translation on Rocky
+* Computer Assisted Translation path.
+
+
 ```
 Human writer --> a.txt --> CAT --> a.sat.txt--> Human Brain --> a.final.txt
-
 ```
 
 

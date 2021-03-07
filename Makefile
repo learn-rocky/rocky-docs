@@ -76,24 +76,22 @@ file01:
 	${TRANS2} file://./stage/greet.txt :zh-tw
 	${TRANS2} file://./stage/greet.txt :zh-cn
 
-guide-1-3-chinese:
-	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :zh-tw 
+guide-1-chinese:
 	${TRANS2} file://./docs-style-guide/sample-documentation/beginner-docs.md   :zh-cn
+guide-2-chinese:
 	${TRANS2} file://./docs-style-guide/sample-documentation/simplified-docs.md :zh-cn
+guide-3-chinese:
+	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :zh-tw 
 
-guide-1-3-japanese:
-	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :jp
-#	${TRANS2} file://./docs-style-guide/sample-documentation/beginner-docs.md   :jp
-#	${TRANS2} file://./docs-style-guide/sample-documentation/simplified-docs.md :jp
+guide-3-japanese:
+	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :ja
 trans-ver:
 	${TRANS2} -V
 testcmds:
 	@which opencc
-	@which translate
-
+	@which trans
 with-dia:
 	@which dia
-
 help:
 	@echo "Usage: make <target>"
 	@echo
