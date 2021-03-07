@@ -15,7 +15,7 @@ Human writer --> a.txt --> Human Brain --> a.final.txt
 
 
 ```
-Human writer --> a.txt --> CAT --> a.sat.txt--> Human Brain --> a.final.txt
+Human writer --> a.txt --> CAT --> a.cat.txt--> Human Brain --> a.final.txt
 ```
 
 
