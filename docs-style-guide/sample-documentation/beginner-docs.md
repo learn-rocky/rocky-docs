@@ -47,4 +47,4 @@ You can do this as the installation progresses. It is required that you have a r
 
 # picture
 
-![inplace workflow](/tmp/t.png "inplace upgrade").
+![inplace workflow](./inplace-workflow.png "inplace upgrade").
