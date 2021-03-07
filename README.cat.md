@@ -1,20 +1,20 @@
-# WHAT: SAT(Software Assissted Translation)
-
-* semi-automated translation per Calder Sheagren.
-```
-Writer --> a.txt --> SAT --> a.sat.txt--> Human Brain --> a.final.txt
-
-```
+# WHAT: Rocky CAT
 * Direct human translation.
+
 ```
-Writer --> a.txt --> Human Brain --> a.final.txt
+Human writer --> a.txt --> Human Brain --> a.final.txt
+```
+
+* Computer Assisted Translation on Rocky
+```
+Human writer --> a.txt --> CAT --> a.sat.txt--> Human Brain --> a.final.txt
 
 ```
 
 
 # WHY:
 * Save time in most case if using good tranlation engine.
-* Automate repeatable tasks as much as possible
+* Automating  repeatable tasks as much as possible
 
 
 # Tools used in this doc
@@ -161,3 +161,6 @@ pip3  install opencc-python-reimplemented
 ```
  python3 -m opencc -c s2t -i apache-sites-enabled.yangxuan.sc.md -o apache-sites-enabled.opencc.sc.md
 ```
+
+# References:
+* https://en.wikipedia.org/wiki/Computer-assisted_translation
