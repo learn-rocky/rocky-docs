@@ -101,19 +101,9 @@ help:
 	@echo "  help                   show this text"
 	@echo "  clean                  clean the mess"
 	@echo "  sc2tc01                demostrate S.C. to T.C."
-	@echo "  print_release          print release how it should look like with"
-	@echo "                         with the given parameters"
-	@echo "  source                 create the source tarball suitable for"
-	@echo "                         packaging"
-	@echo "  srpm                   create the SRPM"
-	@echo "  copr_build             create the COPR build using the COPR TOKEN"
-	@echo "                         - default path is: $(_COPR_CONFIG)"
-	@echo "                         - can be changed by the COPR_CONFIG env"
-	@echo "  install-deps           create python virtualenv and install there"
-	@echo "                         leapp-repository with dependencies"
-	@echo "  install-deps-fedora    create python virtualenv and install there"
-	@echo "                         leapp-repository with dependencies for Fedora OS"
-	@echo "  lint                   lint source code"
+	@echo "  demo                   lint source code"
+	@echo "  commit                 git commit with default message"
+	@echo "  commit my-message      git commit with my message"
 	@echo "  test                   lint source code and run tests"
 	@echo "  test_no_lint           run tests without linting the source code"
 	@echo ""
@@ -138,8 +128,6 @@ clean:
 	@rm -rf build/ dist/ *.egg-info .pytest_cache/
 	@find . -name 'leapp.db' | grep "\.leapp/leapp.db" | xargs rm -f
 	@find . -name '__pycache__' -exec rm -fr {} +
-	@find . -name '*.pyc' -exec rm -f {} +
-	@find . -name '*.pyo' -exec rm -f {} +
 	-rm -rf dist/ build/
 	-rm -rf *~
 	-find . -type f -name *.pyc -exec rm -f {} \;
