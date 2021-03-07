@@ -171,7 +171,7 @@ Hello. How are you?
 
 ### Now translate rocky howto guides to  ZH-TW language
 
-Following is showing zh-cn output , not zh-tw as expected.
+Following is returning zh-cn characters, not zh-tw as specified.
 
 ```
 [me@fedora01t ]$ trans file:///home/me/github/rocky-docs/apache-sites-enabled.english.md  :zh-tw
