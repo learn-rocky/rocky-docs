@@ -28,7 +28,7 @@ Human writer --> a.txt --> CAT --> a.cat.txt--> Human Brain --> a.final.txt
 ## Tools used in this doc
 
 * Google translate shell, a command line via translate.google.com API.
-* opencc : for conversion between SC and TC.
+* opencc : for conversion between SC and zh-tw.
 
 ## OS info
 ```
@@ -43,10 +43,32 @@ Codename:	ThirtyFour
 
 ## Using google translate command line tool
 
-## Install
+
+* Install python googletrans version 3.1.0a0
 
 ```
 pip3 install googletrans==3.1.0a0
+```
+* translate help 
+```
+
+[me@fedora01t bin]$ which translate
+~/.local/bin/translate
+[me@fedora01t bin]$ ~/.local/bin/translate -h
+usage: translate [-h] [-d DEST] [-s SRC] [-c] text
+
+Python Google Translator as a command-line tool
+
+positional arguments:
+  text                  The text you want to translate.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DEST, --dest DEST  The destination language you want to translate. (Default: en)
+  -s SRC, --src SRC     The source language you want to translate. (Default: auto)
+  -c, --detect
+[me@fedora01t bin]$
+	
 ```
 
 # Usage examples
@@ -67,21 +89,15 @@ Translations of veritas lux mea
 ## Translate string of text from  SC to English
 
 ```
-[me@fedora01t rocky-docs]$ trans  "服务器多站点设置"
-服务器多站点设置
-(Fúwùqì duō zhàndiǎn shèzhì)
-
-Server multi-site settings
-
-Translations of 服务器多站点设置
-[ 简体中文 -> English ]
-
-服务器多站点设置
-    Server multi-site settings, Multi-site server settings
-[me@fedora01t rocky-docs]$ 
+[me@fedora01t bin]$ ./translate -s zh-cn -d zh-tw  "服务器多站点设置"
+[zh-CN] 服务器多站点设置
+    ->
+[zh-tw] 服務器多站點設置
+[pron.] Fúwùqì duō zhàn diǎn shèzhì
+[me@fedora01t bin]$
 ```
 
-## Translate string of text from  SC to TC
+## Translate string of text from  zh-cn to zh-tw
 
 ```
 [me@fedora01t rocky-docs]$ trans  "服务器多站点设置" -d zh-tw
@@ -133,18 +149,17 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 ### you may see following error message which usage is reached.
 ```
 [me@fedora01t rocky-docs]$ make file01
-   /home/x220/github/translate-shell/translate file:///home/x220/github/rocky-docs/greet.txt :zh-tw
-   [ERROR] Google did not return results because rate limiting is in effect
-   [ERROR] Rate limiting
-
-   [me@fedora01t rocky-docs]$
+ /home/me/github/translate-shell/translate file:///home/me/github/rocky-docs/greet.txt :zh-tw
+ [ERROR] Google did not return results because rate limiting is in effect
+ [ERROR] Rate limiting
+[me@fedora01t rocky-docs]$
 ```
 
 ```
-[me@fedora01t rocky-docs]$ cat /home/x220/github/rocky-docs/greet.txt
+[me@fedora01t rocky-docs]$ cat /home/me/github/rocky-docs/greet.txt
 வணக்கம். எப்படி இருக்கீங்க?
 [me@fedora01t rocky-docs]$
-[me@fedora01t translate-shell]$ trans file:///home/x220/github/rocky-docs/greet.txt :zh-tw
+[me@fedora01t translate-shell]$ trans file:///home/me/github/rocky-docs/greet.txt :zh-tw
 你好。你好吗？
 [me@fedora01t translate-shell]$
 ```
@@ -152,7 +167,7 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 ### Now translate an Enlish file to ZH-TW language
 
 ```
-[me@fedora01t translate-shell]$ trans file:///home/x220/github/rocky-docs/apache-sites-enabled.english.md  :zh-tw
+[me@fedora01t translate-shell]$ trans file:///home/me/github/rocky-docs/apache-sites-enabled.english.md  :zh-tw
 ---
 标题：“ Apache Web服务器多站点设置”
 ---
@@ -187,14 +202,14 @@ dnf install -y opencc
 pip3  install opencc-python-reimplemented
 ```
 
-## convert TC demo text into SC
+## convert zh-tw demo text into zh-cn
 
 
 ```
  python3 -m opencc -c t2s -i demo-opencc-origin.tc.md -o demo-opencc-origin.sc.md
 ```
 
-## convert SC to TC
+## convert zh-cn to zh-tw
 
 ```
  python3 -m opencc -c s2t -i apache-sites-enabled.yangxuan.sc.md -o apache-sites-enabled.opencc.sc.md
