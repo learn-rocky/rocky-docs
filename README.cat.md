@@ -64,14 +64,17 @@ pip3 install googletrans==3.1.0a0
 
 # Using translate-shell
 
+## Install translate-shell
+```
+sudo dnf install -y translate-shell
+```
 ## trans version info
 ```
-[x220@ipa01 rocky-docs]$ make trans-ver
-/home/x220/github/translate-shell/translate -V
-Translate Shell       0.9.6.12-git:b8b8df0
+[me@fedora01t sample-documentation]$ trans --version
+Translate Shell       0.9.6.12
 
 platform              Linux
-terminal type         xterm
+terminal type         dumb
 bi-di emulator        [N/A]
 gawk (GNU Awk)        5.1.0
 fribidi (GNU FriBidi) 1.0.10
@@ -90,7 +93,8 @@ theme                 default
 init file             [NONE]
 
 Report bugs to:       https://github.com/soimort/translate-shell/issues
-[x220@ipa01 rocky-docs]$ 
+[me@fedora01t sample-documentation]$ 
+
 ```
 
 ## default using google translate engine (beware of transaltion rate limit)
