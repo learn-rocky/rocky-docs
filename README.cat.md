@@ -1,4 +1,5 @@
-# WHAT: Use C.A.T. to help  Rocky document translation.
+# Overview
+## WHAT: Use C.A.T. to help  Rocky document translation.
 
 This guide is for using C.A.T. software to pre-process source language into a raw destination laguage.
 Raw text still need to be reviewed and corrected by human translator.
@@ -18,56 +19,77 @@ Human writer --> a.txt --> Human Brain --> a.final.txt
 Human writer --> a.txt --> CAT --> a.cat.txt--> Human Brain --> a.final.txt
 ```
 
-
-# WHY:
+## WHY:
 
 * Save time in most case if using good tranlation engine.
 * Automating repeatable translation tasks as much as possible
 
 
-# Tools used in this doc
+## Tools used in this doc
 
 * Google translate shell, a command line via translate.google.com API.
 * opencc : for conversion between SC and TC.
 
+## OS info
+```
+[me@fedora01t ~]$ lsb_release  -a
+LSB Version:	:core-4.1-amd64:core-4.1-noarch
+Distributor ID:	Fedora
+Description:	Fedora release 34 (Thirty Four)
+Release:	34
+Codename:	ThirtyFour
+[me@fedora01t ~]$ 
+```
 
-# Using google translate command line tool
+## Using google translate command line tool
 
 ## Install
 
 ```
 pip3 install googletrans==3.1.0a0
 ```
-* Example 1: 
-```
-[x220@ipa01 py-googletrans]$ trans "veritas lux mea" -s la -d en
-[la] veritas lux mea
-    ->
-    [en] The truth is my light
-    [pron.] The truth is my light
-[x220@ipa01 py-googletrans]$
-```
 
-## demo
+# Usage examples
+
+* Example 1: Translate Latin text to English.
 
 ```
-[x220@ipa01 rocky-docs]$ trans  "服务器多站点设置"
-    [zh-CN] 服务器多站点设置
-    ->
-    [en] Server multi-site settings
-    [pron.] None
-[x220@ipa01 rocky-docs]$
+[me@fedora01t rocky-docs]$ trans "veritas lux mea" -s la -d en
+veritas lux mea
+
+The truth is my light
+
+Translations of veritas lux mea
+[ Latina -> English ]
+[me@fedora01t rocky-docs]$ 
 ```
 
-## SC to TC
+## Translate string of text from  SC to English
 
 ```
-[x220@ipa01 rocky-docs]$ trans  "服务器多站点设置" -d zh-tw
+[me@fedora01t rocky-docs]$ trans  "服务器多站点设置"
+服务器多站点设置
+(Fúwùqì duō zhàndiǎn shèzhì)
+
+Server multi-site settings
+
+Translations of 服务器多站点设置
+[ 简体中文 -> English ]
+
+服务器多站点设置
+    Server multi-site settings, Multi-site server settings
+[me@fedora01t rocky-docs]$ 
+```
+
+## Translate string of text from  SC to TC
+
+```
+[me@fedora01t rocky-docs]$ trans  "服务器多站点设置" -d zh-tw
 [zh-CN] 服务器多站点设置
     ->
 [zh-tw] 服務器多站點設置
 [pron.] Fúwùqì duō zhàn diǎn shèzhì
-[x220@ipa01 rocky-docs]$ 
+[me@fedora01t rocky-docs]$ 
 ```
 
 
@@ -110,27 +132,27 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 
 ### you may see following error message which usage is reached.
 ```
-[x220@ipa01 rocky-docs]$ make file01
+[me@fedora01t rocky-docs]$ make file01
    /home/x220/github/translate-shell/translate file:///home/x220/github/rocky-docs/greet.txt :zh-tw
    [ERROR] Google did not return results because rate limiting is in effect
    [ERROR] Rate limiting
 
-   [x220@ipa01 rocky-docs]$
+   [me@fedora01t rocky-docs]$
 ```
 
 ```
-[x220@ipa01 rocky-docs]$ cat /home/x220/github/rocky-docs/greet.txt
+[me@fedora01t rocky-docs]$ cat /home/x220/github/rocky-docs/greet.txt
 வணக்கம். எப்படி இருக்கீங்க?
-[x220@ipa01 rocky-docs]$
-[x220@ipa01 translate-shell]$ trans file:///home/x220/github/rocky-docs/greet.txt :zh-tw
+[me@fedora01t rocky-docs]$
+[me@fedora01t translate-shell]$ trans file:///home/x220/github/rocky-docs/greet.txt :zh-tw
 你好。你好吗？
-[x220@ipa01 translate-shell]$
+[me@fedora01t translate-shell]$
 ```
 
 ### Now translate an Enlish file to ZH-TW language
 
 ```
-[x220@ipa01 translate-shell]$ trans file:///home/x220/github/rocky-docs/apache-sites-enabled.english.md  :zh-tw
+[me@fedora01t translate-shell]$ trans file:///home/x220/github/rocky-docs/apache-sites-enabled.english.md  :zh-tw
 ---
 标题：“ Apache Web服务器多站点设置”
 ---
@@ -149,7 +171,7 @@ Rocky Linux提供了许多方法来设置网站。这只是使用Apache的一种
 
 <snipped>
 
-[x220@ipa01 translate-shell]$
+[me@fedora01t translate-shell]$
 
 ```
 
@@ -159,13 +181,14 @@ Rocky Linux提供了许多方法来设置网站。这只是使用Apache的一种
 dnf install -y opencc
 ```
 
-## python version
+## opencc python front end
 
 ```
 pip3  install opencc-python-reimplemented
 ```
 
 ## convert TC demo text into SC
+
 
 ```
  python3 -m opencc -c t2s -i demo-opencc-origin.tc.md -o demo-opencc-origin.sc.md
