@@ -1,4 +1,4 @@
-# WHAT: Rocky CAT
+# WHAT: Use C.A.T. to help  Rocky document translation.
 
 This guide is for using C.A.T. software to pre-process source language into a raw destination laguage.
 Raw text still need to be reviewed and corrected by human translator.
@@ -20,25 +20,27 @@ Human writer --> a.txt --> CAT --> a.sat.txt--> Human Brain --> a.final.txt
 
 
 # WHY:
+
 * Save time in most case if using good tranlation engine.
-* Automating  repeatable tasks as much as possible
+* Automating repeatable translation tasks as much as possible
 
 
 # Tools used in this doc
 
-* Google translate shell: from English to other languages.
+* Google translate shell, a command line via translate.google.com API.
 * opencc : for conversion between SC and TC.
 
 
 # Using google translate command line tool
 
-## install
+## Install
 
 ```
 pip3 install googletrans==3.1.0a0
 ```
+* Example 1: 
 ```
-[x220@ipa01 py-googletrans]$ translate "veritas lux mea" -s la -d en
+[x220@ipa01 py-googletrans]$ trans "veritas lux mea" -s la -d en
 [la] veritas lux mea
     ->
     [en] The truth is my light
@@ -49,7 +51,7 @@ pip3 install googletrans==3.1.0a0
 ## demo
 
 ```
-[x220@ipa01 rocky-docs]$ translate  "服务器多站点设置"
+[x220@ipa01 rocky-docs]$ trans  "服务器多站点设置"
     [zh-CN] 服务器多站点设置
     ->
     [en] Server multi-site settings
@@ -60,7 +62,7 @@ pip3 install googletrans==3.1.0a0
 ## SC to TC
 
 ```
-[x220@ipa01 rocky-docs]$ translate  "服务器多站点设置" -d zh-tw
+[x220@ipa01 rocky-docs]$ trans  "服务器多站点设置" -d zh-tw
 [zh-CN] 服务器多站点设置
     ->
 [zh-tw] 服務器多站點設置
