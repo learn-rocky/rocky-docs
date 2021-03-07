@@ -26,8 +26,10 @@ Human writer --> a.txt --> CAT --> a.sat.txt--> Human Brain --> a.final.txt
 # Using google translate command line tool
 
 ## install
-pip3 install googletrans==3.1.0a0
 
+```
+pip3 install googletrans==3.1.0a0
+```
 ```
 [x220@ipa01 py-googletrans]$ translate "veritas lux mea" -s la -d en
 [la] veritas lux mea
