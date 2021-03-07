@@ -45,6 +45,6 @@ When you've made all of the changes that you wish to make here, click "Begin Ins
 You can do this as the installation progresses. It is required that you have a root password, and highly recommended that you also create a non-root user and password.
 10. Once the installation is complete, follow the on-screen instructions to reboot the machine. You should now have a working Rocky Linux installation.
 
-# picture
+# Inplace upgrade workflow
 
-![inplace workflow](./inplace-workflow.png "inplace upgrade").
+![inplace upgrade workflow](./inplace-workflow.png "inplace upgrade workflow").
