@@ -11,7 +11,7 @@ DOCS      = ./docs
 SHELL := /bin/bash
 TRANS = ~/.local/bin/translate
 TRANS2 = /home/x220/github/translate-shell/translate
-
+DIA=/usr/bin/dia --nosplash --export=/tmp/t.png inplace-workflow.dia
 all: sc2tc
 # enable makefile to accept argument after command
 #https://stackoverflow.com/questions/6273608/how-to-pass-argument-to-makefile-from-command-line
@@ -80,3 +80,6 @@ trans-ver:
 testcmds:
 	@which opencc
 	@which translate
+
+with-dia:
+	@which dia

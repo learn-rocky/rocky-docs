@@ -44,3 +44,7 @@ When you've made all of the changes that you wish to make here, click "Begin Ins
 `insert screen shot`  
 You can do this as the installation progresses. It is required that you have a root password, and highly recommended that you also create a non-root user and password.
 10. Once the installation is complete, follow the on-screen instructions to reboot the machine. You should now have a working Rocky Linux installation.
+
+# picture
+
+![inplace workflow](/tmp/t.png "inplace upgrade").
