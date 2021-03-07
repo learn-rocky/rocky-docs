@@ -154,9 +154,11 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
  [ERROR] Rate limiting
 [me@fedora01t rocky-docs]$
 ```
-* Translate text in file examples.
+* Translate Greek text in file to other languages.
 ```
-
+[me@fedora01t ]$ cat /home/me/github/rocky-docs/stage/greet.txt
+வணக்கம். எப்படி இருக்கீங்க?
+[me@fedora01t ]$
 [me@fedora01t rocky-docs]$ trans  file:///home/me/github/rocky-docs/stage/greet.txt  :zh-tw
 你好。你好吗？
 [me@fedora01t rocky-docs]$ trans  file:///home/me/github/rocky-docs/stage/greet.txt  :zh-cn
@@ -166,7 +168,6 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 [me@fedora01t rocky-docs]$ trans  file:///home/me/github/rocky-docs/stage/greet.txt  :en
 Hello. How are you?
 [me@fedora01t rocky-docs]$
-
 ```
 
 ### Now translate rocky howto guides to  ZH-TW language
