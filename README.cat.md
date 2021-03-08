@@ -240,6 +240,7 @@ pip3  install opencc-python-reimplemented
 ```
 
 # References:
+* translate-shell: https://github.com/soimort/translate-shell
 * opencc
 * opencc-python-reimplemented
 * https://en.wikipedia.org/wiki/Computer-assisted_translation
