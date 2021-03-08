@@ -1,4 +1,4 @@
-# Overview
+# Assisted translation overview
 ## WHAT: Use C.A.T. to help  Rocky document translation.
 
 This guide is for using C.A.T. software to pre-process source language into a raw destination laguage.
@@ -71,18 +71,29 @@ optional arguments:
 	
 ```
 
-# Usage examples
+# Examples from translate
 
 * Example 1: Translate Latin text to English.
 
 ```
-[me@fedora01t rocky-docs]$ trans "veritas lux mea" -s la -d en
+[me@fedora01t rocky-docs]$ trans "veritas lux mea" -s la -d en 
 veritas lux mea
 
 The truth is my light
 
 Translations of veritas lux mea
 [ Latina -> English ]
+[me@fedora01t rocky-docs]$
+[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d ja
+[la] veritas lux mea
+    ->
+[ja] 真実は私の光です
+[pron.] Shinjitsu wa watashi no hikaridesu
+[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d zh-tw
+[la] veritas lux mea
+    ->
+[zh-tw] 事實是我的光
+[pron.] Shìshí shì wǒ de guāng
 [me@fedora01t rocky-docs]$ 
 ```
 
