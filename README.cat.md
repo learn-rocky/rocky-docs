@@ -221,11 +221,13 @@ Rocky Linux提供了許多方法來設置網站。這只是使用Apache的一種
 
 # Using opencc library for Simplified Chinese and Traditional Chinese conversion
 
+* Install opencc library first.
+
 ```
 [me@fedora01t rocky-docs]$ sudo dnf install -y opencc 
 ```
 
-## opencc python front end
+* Then opencc python front end.
 
 ```
 pip3  install opencc-python-reimplemented
