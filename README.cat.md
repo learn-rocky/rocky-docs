@@ -160,7 +160,7 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 
 ```
 
-## default using google translate engine (beware of transaltion rate limit)
+## Default backend is google translate engine with rate limitation. 
 
 ### you may see following error message which usage is reached.
 ```
