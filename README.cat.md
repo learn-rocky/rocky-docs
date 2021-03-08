@@ -187,9 +187,8 @@ Hello. How are you?
 [me@fedora01t rocky-docs]$
 ```
 
-### Now translate rocky howto guides to  ZH-TW language
+### Translate rocky howto guide to ZH-TW by trans.
 
-Following is returning zh-CN characters, not zh-TW as specified.
 
 ```
 
