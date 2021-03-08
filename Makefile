@@ -64,7 +64,7 @@ commit:
 sc2tc: sc2tc01
 
 sc2tc01:
-	${TRANS}  "服务器多站点设置" -d zh-tw -s zh-cn
+	${TRANS}  "服务器多站点设置" -d zh-TW -s zh-CN
 tc2sc:
 	@echo "Simplified Chinese to Traditonal Chinese"
 sc2tc:
@@ -73,15 +73,15 @@ sc2tc:
 demo: sc2tc01 file01 guide-1-3-chinese guide-1-3-japanese
 	@echo
 file01:
-	${TRANS2} file://./stage/greet.txt :zh-tw
-	${TRANS2} file://./stage/greet.txt :zh-cn
+	${TRANS2} file://./stage/greet.txt :zh-TW
+	${TRANS2} file://./stage/greet.txt :zh-CN
 
 guide-1-chinese:
-	${TRANS2} file://./docs-style-guide/sample-documentation/beginner-docs.md   :zh-cn
+	${TRANS2} file://./docs-style-guide/sample-documentation/beginner-docs.md   :zh-CN
 guide-2-chinese:
-	${TRANS2} file://./docs-style-guide/sample-documentation/simplified-docs.md :zh-cn
+	${TRANS2} file://./docs-style-guide/sample-documentation/simplified-docs.md :zh-CN
 guide-3-chinese:
-	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :zh-tw 
+	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :zh-TW 
 
 guide-3-japanese:
 	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :ja
