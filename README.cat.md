@@ -163,7 +163,7 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 
 ## Default backend is google translate engine with rate limitation. 
 
-### you may see following error message which usage is reached.
+### Example output when free usage treshhold is reached.
 ```
 [me@fedora01t rocky-docs]$ make file01
  /home/me/github/translate-shell/translate file:///home/me/github/rocky-docs/greet.txt :zh-TW
