@@ -94,6 +94,11 @@ Translations of veritas lux mea
     ->
 [zh-tw] 事實是我的光
 [pron.] Shìshí shì wǒ de guāng
+[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d zh-cn
+[la] veritas lux mea
+    ->
+[zh-cn] 事实是我的光
+[pron.] Shìshí shì wǒ de guāng
 [me@fedora01t rocky-docs]$ 
 ```
 
