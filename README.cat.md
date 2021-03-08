@@ -187,7 +187,7 @@ Hello. How are you?
 [me@fedora01t rocky-docs]$
 ```
 
-### Translate rocky howto guide to ZH-TW by trans.
+### Translate rocky howto guide to zh-TW by trans.
 
 
 ```
