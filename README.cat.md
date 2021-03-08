@@ -170,6 +170,15 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
  [ERROR] Google did not return results because rate limiting is in effect
  [ERROR] Rate limiting
 [me@fedora01t rocky-docs]$
+
+[me@fedora01t rocky-docs]$ trans --dump ...
+<snipped>
+<div style="font-size:13px;">
+Our systems have detected unusual traffic from your computer network.  Please try your request again later.  <a href="#" onclick="document.getElementById('infoDiv0').style.display='block';">Why did \
+this happen?</a><br><br>
+<snipped>
+[me@fedora01t rocky-docs]$
+
 ```
 * Translate greeting  text in file to other languages.
 ```
