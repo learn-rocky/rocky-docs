@@ -64,7 +64,7 @@ commit:
 sc2tc: sc2tc01
 
 sc2tc01:
-	${TRANS}  "服务器多站点设置" -d zh-TW -s zh-CN
+	${TRANS} --brief  "服务器多站点设置" -d zh-TW -s zh-CN
 tc2sc:
 	@echo "Simplified Chinese to Traditonal Chinese"
 sc2tc:
