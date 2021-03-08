@@ -105,7 +105,7 @@ Translations of veritas lux mea
 ## Translate string of text from  SC to English
 
 ```
-[me@fedora01t bin]$ ./translate -s zh-CN -d zh-TW  "服务器多站点设置"
+[me@fedora01t bin]$ ./translate zh-CN:zh-TW  "服务器多站点设置"
 [zh-CN] 服务器多站点设置
     ->
 [zh-TW] 服務器多站點設置
@@ -116,7 +116,7 @@ Translations of veritas lux mea
 ## Translate string of text from  zh-CN to zh-TW
 
 ```
-[me@fedora01t rocky-docs]$  trans  "服务器多站点设置" :zh-TW
+[me@fedora01t rocky-docs]$  trans  "服务器多站点设置" zh-CN:zh-TW
 服务器多站点设置
 (Fúwùqì duō zhàndiǎn shèzhì)
 
