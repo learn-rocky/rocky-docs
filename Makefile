@@ -9,10 +9,7 @@ A2PSTMP   = /tmp
 DOCS      = ./docs
 
 SHELL := /bin/bash
-#TRANS = ~/.local/bin/translate
-#TRANS2 = /home/x220/github/translate-shell/translate
 TRANS = /usr/bin/trans
-TRANS2 = /usr/bin/trans
 
 DIA=/usr/bin/dia --nosplash --export=/tmp/t.png inplace-workflow.dia
 
@@ -73,23 +70,23 @@ sc2tc:
 demo: sc2tc01 file01 guide-1-3-chinese guide-1-3-japanese
 	@echo
 file01:
-	${TRANS2} file://./stage/greet.txt :zh-TW
-	${TRANS2} file://./stage/greet.txt :zh-CN
+	${TRANS} file://./stage/greet.txt :zh-TW
+	${TRANS} file://./stage/greet.txt :zh-CN
 
 guide-1-chinese:
-	${TRANS2} file://./docs-style-guide/sample-documentation/beginner-docs.md   :zh-CN
+	${TRANS} file://./docs-style-guide/sample-documentation/beginner-docs.md   :zh-CN
 guide-2-chinese:
-	${TRANS2} file://./docs-style-guide/sample-documentation/simplified-docs.md :zh-CN
+	${TRANS} file://./docs-style-guide/sample-documentation/simplified-docs.md :zh-CN
 guide-3-chinese:
-	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :zh-TW 
+	${TRANS} file://./docs-style-guide/sample-documentation/advanced-docs.md   :zh-TW 
 
 guide-3-japanese:
-	${TRANS2} file://./docs-style-guide/sample-documentation/advanced-docs.md   :ja
+	${TRANS} file://./docs-style-guide/sample-documentation/advanced-docs.md   :ja
 trans-ver:
-	${TRANS2} -V
-testcmds:
-	@which opencc
+	${TRANS} -V
+testcmd:
 	@which trans
+	@which dia
 with-dia:
 	@which dia
 help:
@@ -98,8 +95,10 @@ help:
 	@echo "Available targets are:"
 	@echo "  help                   show this text"
 	@echo "  clean                  clean the mess"
+	@echo "  testcmd               testing if needed command exist."
 	@echo "  sc2tc01                demostrate S.C. to T.C."
-	@echo "  demo                   lint source code"
+	@echo "  demo                   translate text as augument in trans command line".
+	@echo "  file-demo              translate text in file demo"
 	@echo "  commit                 git commit with default message"
 	@echo "  commit my-message      git commit with my message"
 	@echo "  test                   lint source code and run tests"
