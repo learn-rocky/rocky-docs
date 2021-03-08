@@ -28,7 +28,7 @@ Human writer --> a.txt --> CAT --> a.cat.txt--> Human Brain --> a.final.txt
 ## Tools used in this doc
 
 * Google translate shell, a command line via translate.google.com API.
-* opencc : for conversion between SC and zh-tw.
+* opencc : for conversion between SC and zh-TW.
 
 ## OS info
 ```
@@ -89,15 +89,15 @@ Translations of veritas lux mea
     ->
 [ja] 真実は私の光です
 [pron.] Shinjitsu wa watashi no hikaridesu
-[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d zh-tw
+[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d zh-TW
 [la] veritas lux mea
     ->
-[zh-tw] 事實是我的光
+[zh-TW] 事實是我的光
 [pron.] Shìshí shì wǒ de guāng
-[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d zh-cn
+[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d zh-CN
 [la] veritas lux mea
     ->
-[zh-cn] 事实是我的光
+[zh-CN] 事实是我的光
 [pron.] Shìshí shì wǒ de guāng
 [me@fedora01t rocky-docs]$ 
 ```
@@ -105,22 +105,23 @@ Translations of veritas lux mea
 ## Translate string of text from  SC to English
 
 ```
-[me@fedora01t bin]$ ./translate -s zh-cn -d zh-tw  "服务器多站点设置"
+[me@fedora01t bin]$ ./translate -s zh-CN -d zh-TW  "服务器多站点设置"
 [zh-CN] 服务器多站点设置
     ->
-[zh-tw] 服務器多站點設置
+[zh-TW] 服務器多站點設置
 [pron.] Fúwùqì duō zhàn diǎn shèzhì
 [me@fedora01t bin]$
 ```
 
-## Translate string of text from  zh-cn to zh-tw
+## Translate string of text from  zh-CN to zh-TW
 
 ```
-[me@fedora01t rocky-docs]$ trans  "服务器多站点设置" -d zh-tw
-[zh-CN] 服务器多站点设置
-    ->
-[zh-tw] 服務器多站點設置
-[pron.] Fúwùqì duō zhàn diǎn shèzhì
+[me@fedora01t rocky-docs]$  trans  "服务器多站点设置" :zh-TW
+服务器多站点设置
+(Fúwùqì duō zhàndiǎn shèzhì)
+
+服務器多站點設置
+(Fúwùqì duō zhàn diǎn shèzhì)
 [me@fedora01t rocky-docs]$ 
 ```
 
@@ -165,7 +166,7 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 ### you may see following error message which usage is reached.
 ```
 [me@fedora01t rocky-docs]$ make file01
- /home/me/github/translate-shell/translate file:///home/me/github/rocky-docs/greet.txt :zh-tw
+ /home/me/github/translate-shell/translate file:///home/me/github/rocky-docs/greet.txt :zh-TW
  [ERROR] Google did not return results because rate limiting is in effect
  [ERROR] Rate limiting
 [me@fedora01t rocky-docs]$
@@ -175,9 +176,9 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 [me@fedora01t ]$ cat /home/me/github/rocky-docs/stage/greet.txt
 வணக்கம். எப்படி இருக்கீங்க?
 [me@fedora01t ]$
-[me@fedora01t rocky-docs]$ trans  file:///home/me/github/rocky-docs/stage/greet.txt  :zh-tw
-你好。你好吗？
-[me@fedora01t rocky-docs]$ trans  file:///home/me/github/rocky-docs/stage/greet.txt  :zh-cn
+[me@fedora01t rocky-docs]$ trans  file:///home/me/github/rocky-docs/stage/greet.txt  :zh-TW
+你好。你好嗎？
+[me@fedora01t rocky-docs]$ trans  file:///home/me/github/rocky-docs/stage/greet.txt  :zh-CN
 你好。你好吗？
 [me@fedora01t rocky-docs]$ trans  file:///home/me/github/rocky-docs/stage/greet.txt  :ja
 こんにちは。お元気ですか？
@@ -188,36 +189,40 @@ Hello. How are you?
 
 ### Now translate rocky howto guides to  ZH-TW language
 
-Following is returning zh-cn characters, not zh-tw as specified.
+Following is returning zh-CN characters, not zh-TW as specified.
 
 ```
-[me@fedora01t ]$ trans file:///home/me/github/rocky-docs/apache-sites-enabled.english.md  :zh-tw
+
+[me@fedora01t rocky-docs]$  trans file:///home/me/github/rocky-docs/stage/apache-sites-enabled.english.md  :zh-TW | head -20
 ---
-标题：“ Apache Web服务器多站点设置
+標題：“ Apache Web服務器多站點設置”
 ---
 
-＃Apache Web服务器多站点设置
+＃Apache Web服務器多站點設置
 
-Rocky Linux提供了许多方法来设置网站。这只是使用Apache的一种方法，旨在用作单个服务器上的多站点设置。<snipped>
+Rocky Linux提供了許多方法來設置網站。這只是使用Apache的一種方法，旨在用作單個服務器上的多站點設置。儘管此方法是為多站點服務器設計的，但它也可以作為單個站點服務器的基本配置。
 
-历史事实：此服务器设置似乎是从基于Debian的系统开始的，但它完全适合于任何运行Apache的Linux操作系统。
+歷史事實：此服務器設置似乎已從基於Debian的系統開始，但它完全適用於任何運行Apache的Linux操作系統。
 
-##您需要什么
-*运行Rocky Linux的服务器
-*命令行和文本编辑器的知识（此示例使用* vi *，但可以适应您喜欢的编辑器。）
-*如果您想了解vi文本编辑器，请[这里是一个方便的教程]（https://www.tutorialspoint.com/unix/unix-vi-editor.htm）。
-*有关安装和运行Web服务的基本知识
+##您需要什麼
+*運行Rocky Linux的服務器
+*命令行和文本編輯器的知識（此示例使用* vi *，但可以適應您喜歡的編輯器。）
+*如果您想了解vi文本編輯器，請[這裡是一個方便的教程]（https://www.tutorialspoint.com/unix/unix-vi-editor.htm）。
+*有關安裝和運行Web服務的基本知識
 
-<snipped>
+##安裝Apache
+您可能需要網站的其他軟件包。例如，幾乎肯定會需要一個PHP版本，也許還需要一個數據庫或其他軟件包。將PHP與httpd一起安裝將使您從Rocky Linux存儲庫中獲得最新版本。
 
-[me@fedora01t ]$
-
+請記住，您可能還需要模塊，例如php-bcmath或php-mysqlind。您的Web應用程序規範應詳細說明所需的內容。這些可以隨時安裝。現在，我們將安裝httpd和PHP，因為它們幾乎已成定局：
+  C-c C-c
+  <snipped>
+[me@fedora01t rocky-docs]$ 
 ```
 
-# Using opencc library for S.C. and T.C. conversion
+# Using opencc library for Simplified Chinese and Traditional Chinese conversion
 
 ```
-sudo dnf install -y opencc
+[me@fedora01t rocky-docs]$ sudo dnf install -y opencc 
 ```
 
 ## opencc python front end
@@ -226,14 +231,14 @@ sudo dnf install -y opencc
 pip3  install opencc-python-reimplemented
 ```
 
-## convert zh-tw file into zh-cn
+## convert zh-TW file into zh-CN
 
 
 ```
  python3 -m opencc -c t2s -i /home/me/github/rocky-docs/stage/demo-opencc-origin.tc.md -o /tmp/demo-opencc-origin.sc.md
 ```
 
-## convert zh-cn to zh-tw
+## convert zh-CN to zh-TW
 
 ```
  python3 -m opencc -c s2t -i /home/me/github/rocky-docs/stage/demo-opencc-origin.sc.md -o /tmp/demo-opencc-origin.tc.md
