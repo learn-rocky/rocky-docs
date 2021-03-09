@@ -13,7 +13,6 @@ TRANS = /usr/bin/trans
 
 DIA=/usr/bin/dia --nosplash --export=/tmp/t.png inplace-workflow.dia
 
-
 # enable makefile to accept argument after command
 #https://stackoverflow.com/questions/6273608/how-to-pass-argument-to-makefile-from-command-line
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
@@ -69,9 +68,16 @@ sc2tc:
 
 demo: sc2tc01 file01 guide-1-3-chinese guide-1-3-japanese
 	@echo
+
+file-demo: guide-demo-tw
+	@echo
 file01:
 	${TRANS} file://./stage/greet.txt :zh-TW
 	${TRANS} file://./stage/greet.txt :zh-CN
+guide-demo-tw:
+	${TRANS} file://./en/rocky/8/guides/computer_assisted_translation.md :zh-TW
+guide-demo-cn:
+	${TRANS} file://./en/rocky/8/guides/computer_assisted_translation.md :zh-CN
 
 guide-1-chinese:
 	${TRANS} file://./docs-style-guide/sample-documentation/beginner-docs.md   :zh-CN
@@ -79,7 +85,6 @@ guide-2-chinese:
 	${TRANS} file://./docs-style-guide/sample-documentation/simplified-docs.md :zh-CN
 guide-3-chinese:
 	${TRANS} file://./docs-style-guide/sample-documentation/advanced-docs.md   :zh-TW 
-
 guide-3-japanese:
 	${TRANS} file://./docs-style-guide/sample-documentation/advanced-docs.md   :ja
 trans-ver:
@@ -112,9 +117,6 @@ help:
 	@echo ""
 	@echo "Possible use:"
 	@echo "  make <target>"
-	@echo "  PR=5 make <target>"
-	@echo "  MR=6 make <target>"
-	@echo "  PR=7 SUFFIX='my_additional_suffix' make <target>"
 	@echo "  MR=6 COPR_CONFIG='path/to/the/config/copr/file' make <target>"
 	@echo "  ACTOR=<actor> TEST_LIBS=y make test"
 	@echo ""
