@@ -1,8 +1,8 @@
 
 # Assisted translation overview
-## WHAT: Using CAT with makefile
+## WHAT: Using C.A.T software with makefile
 
-This guide is to C.A.T. software for pre-processing language text into destination laguage.
+This guide is to utilize recent C.A.T. software for pre-processing language text into destination laguage.
 The translated language will need to be further review and corrected by human tranlator.
 Rocky document translator decides which approaches is best for their case.
 
