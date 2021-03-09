@@ -1,19 +1,18 @@
-# Assisted translation overview
-## WHAT: Use C.A.T. to help  Rocky document translation.
 
-This guide is for using C.A.T. software to pre-process source language into a raw destination laguage.
-Raw text still need to be reviewed and corrected by human translator.
+# Assisted translation overview
+## WHAT: Using CAT with makefile
+
+This guide is to C.A.T. software for pre-processing language text into destination laguage.
+The translated language will need to be further review and corrected by human tranlator.
 Rocky document translator decides which approaches is best for their case.
 
 * Direct human translation path.
-
 
 ```
 Human writer --> a.txt --> Human Brain --> a.final.txt
 ```
 
 * Computer Assisted Translation path.
-
 
 ```
 Human writer --> a.txt --> CAT --> a.cat.txt--> Human Brain --> a.final.txt
