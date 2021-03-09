@@ -254,8 +254,18 @@ pip3  install opencc-python-reimplemented
 ```
  python3 -m opencc -c s2t -i /home/me/github/rocky-docs/stage/demo-opencc-origin.sc.md -o /tmp/demo-opencc-origin.tc.md
 ```
+# Automate the translation task by makefile
+## TBC
+* t01
+```
+TBC
+```
+* t02
+```
+TBC
+```
 
-# References:
+# References
 * translate-shell: https://github.com/soimort/translate-shell
 * opencc
 * opencc-python-reimplemented
