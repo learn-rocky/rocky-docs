@@ -1,4 +1,3 @@
-
 # Assisted translation overview
 ## WHAT: Using C.A.T software with makefile
 
@@ -102,7 +101,7 @@ Translations of veritas lux mea
 [me@fedora01t rocky-docs]$ 
 ```
 
-## Translate string of text from  SC to English
+## Translate string of text from Simplified Chinese(zh-CN) to English
 
 ```
 [me@fedora01t bin]$ ./translate -s zh-CN -d zh-TW  "服务器多站点设置"
@@ -124,7 +123,6 @@ Translations of veritas lux mea
 (Fúwùqì duō zhàn diǎn shèzhì)
 [me@fedora01t rocky-docs]$ 
 ```
-
 
 # Using translate-shell
 
@@ -212,7 +210,7 @@ Rocky Linux提供了許多方法來設置網站。這只是使用Apache的一種
 
 歷史事實：此服務器設置似乎已從基於Debian的系統開始，但它完全適用於任何運行Apache的Linux操作系統。
 
-##您需要什麼
+##您需要什麼 
 *運行Rocky Linux的服務器
 *命令行和文本編輯器的知識（此示例使用* vi *，但可以適應您喜歡的編輯器。）
 *如果您想了解vi文本編輯器，請[這裡是一個方便的教程]（https://www.tutorialspoint.com/unix/unix-vi-editor.htm）。
@@ -229,11 +227,21 @@ Rocky Linux提供了許多方法來設置網站。這只是使用Apache的一種
 
 # Automate the translation task by makefile
 ## TBC
-* t01
+
+* Example makefile
+
 ```
 TBC
 ```
+
+* automake your git commit by make
+```
+make commit                    # no argument will commit with default message text.
+make commit "testing message"  # adding commit message
+```
+
 * t02
+
 ```
 TBC
 ```
