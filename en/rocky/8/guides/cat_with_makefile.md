@@ -27,7 +27,8 @@ Human writer --> a.txt --> CAT --> a.cat.txt--> Human Brain --> a.final.txt
 ## Tools used in this doc
 
 * Google translate shell, a command line via translate.google.com API.
-* opencc : for conversion between SC and zh-TW.
+* GNU Make, for task automation.
+* Dia, for digrams needed in document.
 
 ## OS info
 ```
@@ -226,34 +227,6 @@ Rocky Linux提供了許多方法來設置網站。這只是使用Apache的一種
 [me@fedora01t rocky-docs]$ 
 ```
 
-# Using opencc library for Simplified Chinese and Traditional Chinese conversion
-
-opencc is very good at handling Simplified Chinese and Traditional Chinese conversion.
-
-* Install opencc library first.
-
-```
-[me@fedora01t rocky-docs]$ sudo dnf install -y opencc 
-```
-
-* Then opencc python front end.
-
-```
-pip3  install opencc-python-reimplemented
-```
-
-## convert zh-TW file into zh-CN
-
-
-```
- python3 -m opencc -c t2s -i /home/me/github/rocky-docs/stage/demo-opencc-origin.tc.md -o /tmp/demo-opencc-origin.sc.md
-```
-
-## convert zh-CN to zh-TW
-
-```
- python3 -m opencc -c s2t -i /home/me/github/rocky-docs/stage/demo-opencc-origin.sc.md -o /tmp/demo-opencc-origin.tc.md
-```
 # Automate the translation task by makefile
 ## TBC
 * t01
