@@ -27,7 +27,7 @@ Human writer --> a.txt --> C.A.T. software --> a.cat.txt--> Human Brain --> a.fi
 
 * Google translate shell, a command line via translate.google.com API.
 * GNU Make, for task automation.
-* Dia, for authoring digram to use less words by picture in a document.
+* Dia, for authoring digrams to condense meanings into picture.
 
 ## OS info
 ```
