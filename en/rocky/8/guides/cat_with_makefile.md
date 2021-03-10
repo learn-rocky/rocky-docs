@@ -20,13 +20,14 @@ Human writer --> a.txt --> C.A.T. software --> a.cat.txt--> Human Brain --> a.fi
 ## WHY:
 
 * Many repetitive translation tasks can be acclerated  by automation using makefile.
-* Less stressful when you can off-load task to compute macihne.
+* Less stressful when you can off-load tasks to compute macihne.
 
 ## Tools used in this doc
 
 * Google translate shell, a command line via translate.google.com API.
 * GNU Make, for task automation.
 * Dia, for authoring digrams to condense meanings into picture.
+* Git/Github, distributed sourcecode/text  management tool for a group.
 
 ## OS info
 ```
