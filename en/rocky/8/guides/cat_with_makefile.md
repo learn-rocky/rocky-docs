@@ -80,7 +80,7 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 * Example 1: Translate Latin text to English.
 
 ```
-[me@fedora01t rocky-docs]$ trans "veritas lux mea" -s la -d en 
+[me@fedora01t rocky-docs]$ trans "veritas lux mea"  la:en 
 veritas lux mea
 
 The truth is my light
@@ -88,51 +88,35 @@ The truth is my light
 Translations of veritas lux mea
 [ Latina -> English ]
 [me@fedora01t rocky-docs]$
-[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d ja
-[la] veritas lux mea
-    ->
-[ja] 真実は私の光です
-[pron.] Shinjitsu wa watashi no hikaridesu
-[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d zh-TW
-[la] veritas lux mea
-    ->
-[zh-TW] 事實是我的光
-[pron.] Shìshí shì wǒ de guāng
-[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d zh-CN
-[la] veritas lux mea
-    ->
-[zh-CN] 事实是我的光
-[pron.] Shìshí shì wǒ de guāng
+* Example 2: latin to japanese
+[me@fedora01t rocky-docs]$ trans "veritas lux mea" la:ja
+veritas lux mea
+
+真実は私の光です
+(Shinjitsu wa watashi no hikaridesu)
+
+Translations of veritas lux mea
+[ Latina -> 日本語 ]
+
+veritas lux mea
+    真実は私の光です, 真実は、私の光であり、
 [me@fedora01t rocky-docs]$ 
-```
-
-## Translate string of text from Simplified Chinese(zh-CN) to English
 
 ```
-[me@fedora01t bin]$ ./translate -s zh-CN -d zh-TW  "服务器多站点设置"
+
+* Example 3: Translate string of text from Simplified Chinese(zh-CN) to English
+
+```
+[me@fedora01t bin]$ trans zh-CN:zh-TW  "服务器多站点设置"
 [zh-CN] 服务器多站点设置
     ->
 [zh-TW] 服務器多站點設置
 [pron.] Fúwùqì duō zhàn diǎn shèzhì
 [me@fedora01t bin]$
-```
-
-## Translate string of text from  zh-CN to zh-TW
 
 ```
-[me@fedora01t rocky-docs]$  trans  "服务器多站点设置" :zh-TW
-服务器多站点设置
-(Fúwùqì duō zhàndiǎn shèzhì)
 
-服務器多站點設置
-(Fúwùqì duō zhàn diǎn shèzhì)
-[me@fedora01t rocky-docs]$ 
-```
-
-# Using translate-shell
-
-
-## Default backend is google translate engine with rate limitation. 
+## Default trans backend is google translate engine with rate limit.
 
 ### Example output when free usage treshhold is reached.
 ```
@@ -151,7 +135,9 @@ this happen?</a><br><br>
 [me@fedora01t rocky-docs]$
 
 ```
-* Translate greeting  text in file to other languages.
+
+* Translate greeting text in file to other languages.
+
 ```
 [me@fedora01t ]$ cat /home/me/github/rocky-docs/stage/greet.txt
 வணக்கம். எப்படி இருக்கீங்க?
@@ -167,7 +153,7 @@ Hello. How are you?
 [me@fedora01t rocky-docs]$
 ```
 
-### Translate rocky howto guide to zh-TW by trans.
+## Translate rocky howto guide to zh-TW by trans.
 
 
 ```
