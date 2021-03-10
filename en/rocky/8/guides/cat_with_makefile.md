@@ -206,4 +206,4 @@ TBC
 # References
 * R1: translate-shell,https://github.com/soimort/translate-shell
    * More trans examples at https://github.com/soimort/translate-shell/blob/develop/README.md
-* R1: https://en.wikipedia.org/wiki/Computer-assisted_translation
+* R2: https://en.wikipedia.org/wiki/Computer-assisted_translation
