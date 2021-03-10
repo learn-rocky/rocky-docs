@@ -1,24 +1,34 @@
 # Using C.A.T. software with makefile
 
-This guide is to utilize recent C.A.T. software for pre-processing language text into destination laguage.
-The translated language will need to be further reviewed  human tranlator.
-Rocky document translators decide which approaches is best for their case.
-
-Benifits of using CAT with makefile.
-* Many repetitive translation tasks can be acclerated  by automation using makefile.
-* Less stressful when you can off-load tasks to compute macihne.
+This guide is to utilize recent C.A.T. software to pre-translate computer related article into destination laguage.
+It is not to replace professional language translation service. The translated text from C.A.T. tool  will need to be further reviewed.
+Rocky document translators decide if this approach is really helpful.
 
 
-* Direct human translation path.
+* Direct human translation.
 
 ```
 Human writer --> a.txt --> Human Brain --> a.final.txt
 ```
 
-* Computer Assisted Translation path.
+* Computer Assisted Translation.
 
 ```
 Human writer --> a.txt --> C.A.T. software --> a.cat.txt--> Human Brain --> a.final.txt
+```
+
+* Example of bad CAT translation
+
+```
+[me@fedora01t rocky-docs]$ trans --brief zh-TW:en  "春風又綠江南岸"
+Spring breeze and green south bank of the river
+春     風     又  綠    南    岸          江
+[me@fedora01t rocky-docs]$
+
+```
+* Better translation of "春風又綠江南岸" by human brain.
+```
+"春風又綠江南岸" --> "Spring bring burgeoning green plant life to southern China."
 ```
 
 
@@ -118,20 +128,6 @@ veritas lux mea
 [pron.] Fúwùqì duō zhàn diǎn shèzhì
 [me@fedora01t bin]$
 
-```
-
-*Example 4: Need human anslated from Simplified Chinese(zh-CN) to Tranditional Chinese.
-
-```
-[me@fedora01t rocky-docs]$ trans --brief zh-TW:en  "春風又綠江南岸"
-Spring breeze and green south bank of the river
-春     風     又  綠    南    岸          江
-[me@fedora01t rocky-docs]$
-
-```
-* Better translation of "春風又綠江南岸" by human brain.
-```
-"春風又綠江南岸" --> "Spring bring burgeoning green plant life to southern China."
 ```
 
 ## Default trans backend is google translate engine with rate limit.
