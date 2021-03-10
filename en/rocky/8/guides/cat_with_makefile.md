@@ -1,9 +1,13 @@
-春風又綠江南岸# Assisted translation overview
-## WHAT: Using C.A.T. software with makefile
+#Using C.A.T. software with makefile
 
 This guide is to utilize recent C.A.T. software for pre-processing language text into destination laguage.
 The translated language will need to be further reviewed  human tranlator.
 Rocky document translators decide which approaches is best for their case.
+
+Benifits of using CAT with makefile.
+* Many repetitive translation tasks can be acclerated  by automation using makefile.
+* Less stressful when you can off-load tasks to compute macihne.
+
 
 * Direct human translation path.
 
@@ -17,10 +21,6 @@ Human writer --> a.txt --> Human Brain --> a.final.txt
 Human writer --> a.txt --> C.A.T. software --> a.cat.txt--> Human Brain --> a.final.txt
 ```
 
-## WHY:
-
-* Many repetitive translation tasks can be acclerated  by automation using makefile.
-* Less stressful when you can off-load tasks to compute macihne.
 
 ## Tools used in this doc
 
