@@ -1,4 +1,4 @@
-# Assisted translation overview
+春風又綠江南岸# Assisted translation overview
 ## WHAT: Using C.A.T. software with makefile
 
 This guide is to utilize recent C.A.T. software for pre-processing language text into destination laguage.
@@ -119,6 +119,19 @@ veritas lux mea
 [me@fedora01t bin]$
 
 ```
+
+*Example 4:  Text translated from Simplified Chinese(zh-CN) to Tranditional Chinese.
+
+```
+[me@fedora01t bin]$ trans zh-TW:en  "春風又綠江南岸"
+[zh-CN] 服务器多站点设置
+    ->
+[zh-TW] 服務器多站點設置
+[pron.] Fúwùqì duō zhàn diǎn shèzhì
+[me@fedora01t bin]$
+
+```
+
 
 ## Default trans backend is google translate engine with rate limit.
 
