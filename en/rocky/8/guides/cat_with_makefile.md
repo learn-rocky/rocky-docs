@@ -1,4 +1,4 @@
-#Using C.A.T. software with makefile
+# Using C.A.T. software with makefile
 
 This guide is to utilize recent C.A.T. software for pre-processing language text into destination laguage.
 The translated language will need to be further reviewed  human tranlator.
