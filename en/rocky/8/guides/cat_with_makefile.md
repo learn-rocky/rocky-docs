@@ -154,32 +154,25 @@ Hello. How are you?
 [me@fedora01t rocky-docs]$
 ```
 
-## Translate rocky howto guide to zh-TW by trans.
+## Translate Rocky Howto Guides to zh-TW by trans.
 
+Following example may not finish the whole file translation if usage from your IP reach the limit.
 
 ```
 
-[me@fedora01t rocky-docs]$  trans file:///home/me/github/rocky-docs/stage/apache-sites-enabled.english.md  :zh-TW | head -20
+[me@fedora01t rocky-docs]$trans file:///home/me/github/rocky-docs/stage/apache-sites-enabled.english.md  :zh-TW | head -20
 ---
 標題：“ Apache Web服務器多站點設置”
 ---
 
 ＃Apache Web服務器多站點設置
 
-Rocky Linux提供了許多方法來設置網站。這只是使用Apache的一種方法，旨在用作單個服務器上的多站點設置。儘管此方法是為多站點服務器設計的，但它也可以作為單個站點服務器的基本配置。
+Rocky Linux提供了許多方法來設置網站。這只是使用Apache的一種方法，旨在用作單個服務器上的多站點設置。
+儘管此方法是為多站點服務器設計的，但它也可以作為單個站點服務器的基本配置。
 
 歷史事實：此服務器設置似乎已從基於Debian的系統開始，但它完全適用於任何運行Apache的Linux操作系統。
 
-##您需要什麼 
-*運行Rocky Linux的服務器
-*命令行和文本編輯器的知識（此示例使用* vi *，但可以適應您喜歡的編輯器。）
-*如果您想了解vi文本編輯器，請[這裡是一個方便的教程]（https://www.tutorialspoint.com/unix/unix-vi-editor.htm）。
-*有關安裝和運行Web服務的基本知識
 
-##安裝Apache
-您可能需要網站的其他軟件包。例如，幾乎肯定會需要一個PHP版本，也許還需要一個數據庫或其他軟件包。將PHP與httpd一起安裝將使您從Rocky Linux存儲庫中獲得最新版本。
-
-請記住，您可能還需要模塊，例如php-bcmath或php-mysqlind。您的Web應用程序規範應詳細說明所需的內容。這些可以隨時安裝。現在，我們將安裝httpd和PHP，因為它們幾乎已成定局：
   C-c C-c
   <snipped>
 [me@fedora01t rocky-docs]$ 
@@ -207,7 +200,5 @@ TBC
 ```
 
 # References
-* translate-shell: https://github.com/soimort/translate-shell
-* opencc
-* opencc-python-reimplemented
-* https://en.wikipedia.org/wiki/Computer-assisted_translation
+* R1: translate-shell,https://github.com/soimort/translate-shell
+* R1: https://en.wikipedia.org/wiki/Computer-assisted_translation
