@@ -20,8 +20,7 @@ Human writer --> a.txt --> C.A.T. software --> a.cat.txt--> Human Brain --> a.fi
 ## WHY:
 
 * Many repetitive translation tasks can be acclerated  by automation using makefile.
-* 
-
+* Less stressful when you can off-load task to compute macihne.
 
 ## Tools used in this doc
 
