@@ -88,7 +88,11 @@ The truth is my light
 Translations of veritas lux mea
 [ Latina -> English ]
 [me@fedora01t rocky-docs]$
+```
+
 * Example 2: latin to japanese
+
+```
 [me@fedora01t rocky-docs]$ trans "veritas lux mea" la:ja
 veritas lux mea
 
@@ -104,7 +108,7 @@ veritas lux mea
 
 ```
 
-* Example 3: Translate string of text from Simplified Chinese(zh-CN) to English
+*Example 3:  Text translated from Simplified Chinese(zh-CN) to Tranditional Chinese.
 
 ```
 [me@fedora01t bin]$ trans zh-CN:zh-TW  "服务器多站点设置"
@@ -201,4 +205,5 @@ TBC
 
 # References
 * R1: translate-shell,https://github.com/soimort/translate-shell
+   * More trans examples at https://github.com/soimort/translate-shell/blob/develop/README.md
 * R1: https://en.wikipedia.org/wiki/Computer-assisted_translation
