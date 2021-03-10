@@ -118,7 +118,7 @@ veritas lux mea
 
 ## Default trans backend is google translate engine with rate limit.
 
-### Example output when free usage treshhold is reached.
+### Example output when free usage threshhold is reached.
 ```
 [me@fedora01t rocky-docs]$ make file01
  /home/me/github/translate-shell/translate file:///home/me/github/rocky-docs/greet.txt :zh-TW
@@ -129,8 +129,9 @@ veritas lux mea
 [me@fedora01t rocky-docs]$ trans --dump ...
 <snipped>
 <div style="font-size:13px;">
-Our systems have detected unusual traffic from your computer network.  Please try your request again later.  <a href="#" onclick="document.getElementById('infoDiv0').style.display='block';">Why did \
-this happen?</a><br><br>
+Our systems have detected unusual traffic from your computer network.
+Please try your request again later.
+<a href="#" onclick="document.getElementById('infoDiv0').style.display='block';">Why did this happen?</a><br><br>
 <snipped>
 [me@fedora01t rocky-docs]$
 
