@@ -1,9 +1,9 @@
 # Assisted translation overview
-## WHAT: Using C.A.T software with makefile
+## WHAT: Using C.A.T. software with makefile
 
 This guide is to utilize recent C.A.T. software for pre-processing language text into destination laguage.
-The translated language will need to be further review and corrected by human tranlator.
-Rocky document translator decides which approaches is best for their case.
+The translated language will need to be further reviewed  human tranlator.
+Rocky document translators decide which approaches is best for their case.
 
 * Direct human translation path.
 
@@ -14,20 +14,20 @@ Human writer --> a.txt --> Human Brain --> a.final.txt
 * Computer Assisted Translation path.
 
 ```
-Human writer --> a.txt --> CAT --> a.cat.txt--> Human Brain --> a.final.txt
+Human writer --> a.txt --> C.A.T. software --> a.cat.txt--> Human Brain --> a.final.txt
 ```
 
 ## WHY:
 
-* Save time in most case if using good tranlation engine.
-* Automating repeatable translation tasks as much as possible
+* Many repetitive translation tasks can be acclerated  by automation using makefile.
+* 
 
 
 ## Tools used in this doc
 
 * Google translate shell, a command line via translate.google.com API.
 * GNU Make, for task automation.
-* Dia, for digrams needed in document.
+* Dia, for authoring digram to use less words by picture in a document.
 
 ## OS info
 ```
@@ -40,37 +40,42 @@ Codename:	ThirtyFour
 [me@fedora01t ~]$ 
 ```
 
-## Using google translate command line tool
+## Install translate-shell
+```
+sudo dnf install -y translate-shell
+```
+## trans version info
+```
+[me@fedora01t sample-documentation]$ trans --version
+Translate Shell       0.9.6.12
 
+platform              Linux
+terminal type         dumb
+bi-di emulator        [N/A]
+gawk (GNU Awk)        5.1.0
+fribidi (GNU FriBidi) 1.0.10
+audio player          [NOT INSTALLED]
+terminal pager        less
+web browser           xdg-open
+user locale           en_US.UTF-8 (English)
+home language         en
+source language       auto
+target language       en
+translation engine    google
+proxy                 [NONE]
+user-agent            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+ip version            [DEFAULT]
+theme                 default
+init file             [NONE]
 
-* Install python googletrans version 3.1.0a0
+Report bugs to:       https://github.com/soimort/translate-shell/issues
+[me@fedora01t sample-documentation]$ 
 
 ```
-pip3 install googletrans==3.1.0a0
-```
-* translate help 
-```
 
-[me@fedora01t bin]$ which translate
-~/.local/bin/translate
-[me@fedora01t bin]$ ~/.local/bin/translate -h
-usage: translate [-h] [-d DEST] [-s SRC] [-c] text
+# Using google translate command line tool, trans
 
-Python Google Translator as a command-line tool
-
-positional arguments:
-  text                  The text you want to translate.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -d DEST, --dest DEST  The destination language you want to translate. (Default: en)
-  -s SRC, --src SRC     The source language you want to translate. (Default: auto)
-  -c, --detect
-[me@fedora01t bin]$
-	
-```
-
-# Examples from translate
+## Examples from trans tool
 
 * Example 1: Translate Latin text to English.
 
@@ -126,38 +131,6 @@ Translations of veritas lux mea
 
 # Using translate-shell
 
-## Install translate-shell
-```
-sudo dnf install -y translate-shell
-```
-## trans version info
-```
-[me@fedora01t sample-documentation]$ trans --version
-Translate Shell       0.9.6.12
-
-platform              Linux
-terminal type         dumb
-bi-di emulator        [N/A]
-gawk (GNU Awk)        5.1.0
-fribidi (GNU FriBidi) 1.0.10
-audio player          [NOT INSTALLED]
-terminal pager        less
-web browser           xdg-open
-user locale           en_US.UTF-8 (English)
-home language         en
-source language       auto
-target language       en
-translation engine    google
-proxy                 [NONE]
-user-agent            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
-ip version            [DEFAULT]
-theme                 default
-init file             [NONE]
-
-Report bugs to:       https://github.com/soimort/translate-shell/issues
-[me@fedora01t sample-documentation]$ 
-
-```
 
 ## Default backend is google translate engine with rate limitation. 
 
