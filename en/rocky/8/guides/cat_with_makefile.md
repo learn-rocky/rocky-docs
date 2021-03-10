@@ -120,18 +120,18 @@ veritas lux mea
 
 ```
 
-*Example 4:  Text translated from Simplified Chinese(zh-CN) to Tranditional Chinese.
+*Example 4: Need human anslated from Simplified Chinese(zh-CN) to Tranditional Chinese.
 
 ```
-[me@fedora01t bin]$ trans zh-TW:en  "春風又綠江南岸"
-[zh-CN] 服务器多站点设置
-    ->
-[zh-TW] 服務器多站點設置
-[pron.] Fúwùqì duō zhàn diǎn shèzhì
-[me@fedora01t bin]$
+[me@fedora01t rocky-docs]$ trans --brief zh-TW:en  "春風又綠江南岸"
+Spring breeze and green south bank of the river
+[me@fedora01t rocky-docs]$
 
 ```
-
+* Google translate engine without human translation.
+```
+"春風又綠江南岸" --> "Spring bring burgeoning green plants to the southern bank of the JianNan river."
+```
 
 ## Default trans backend is google translate engine with rate limit.
 
