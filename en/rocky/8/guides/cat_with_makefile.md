@@ -128,9 +128,9 @@ Spring breeze and green south bank of the river
 [me@fedora01t rocky-docs]$
 
 ```
-* Google translate engine without human translation.
+* Better translation of "春風又綠江南岸" by human brain.
 ```
-"春風又綠江南岸" --> "Spring bring burgeoning green plants to the southern bank of the JianNan river."
+"春風又綠江南岸" --> "Spring bring burgeoning green plant lift to the JianNan river."
 ```
 
 ## Default trans backend is google translate engine with rate limit.
