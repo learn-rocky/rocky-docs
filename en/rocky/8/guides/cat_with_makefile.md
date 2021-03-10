@@ -125,6 +125,7 @@ veritas lux mea
 ```
 [me@fedora01t rocky-docs]$ trans --brief zh-TW:en  "春風又綠江南岸"
 Spring breeze and green south bank of the river
+春     風     又  綠   南岸           江
 [me@fedora01t rocky-docs]$
 
 ```
