@@ -1,4 +1,3 @@
-
 # Assisted translation overview
 ## WHAT: Using C.A.T software with makefile
 
@@ -27,7 +26,8 @@ Human writer --> a.txt --> CAT --> a.cat.txt--> Human Brain --> a.final.txt
 ## Tools used in this doc
 
 * Google translate shell, a command line via translate.google.com API.
-* opencc : for conversion between SC and zh-TW.
+* GNU Make, for task automation.
+* Dia, for digrams needed in document.
 
 ## OS info
 ```
@@ -101,7 +101,7 @@ Translations of veritas lux mea
 [me@fedora01t rocky-docs]$ 
 ```
 
-## Translate string of text from  SC to English
+## Translate string of text from Simplified Chinese(zh-CN) to English
 
 ```
 [me@fedora01t bin]$ ./translate -s zh-CN -d zh-TW  "服务器多站点设置"
@@ -123,7 +123,6 @@ Translations of veritas lux mea
 (Fúwùqì duō zhàn diǎn shèzhì)
 [me@fedora01t rocky-docs]$ 
 ```
-
 
 # Using translate-shell
 
@@ -211,7 +210,7 @@ Rocky Linux提供了許多方法來設置網站。這只是使用Apache的一種
 
 歷史事實：此服務器設置似乎已從基於Debian的系統開始，但它完全適用於任何運行Apache的Linux操作系統。
 
-##您需要什麼
+##您需要什麼 
 *運行Rocky Linux的服務器
 *命令行和文本編輯器的知識（此示例使用* vi *，但可以適應您喜歡的編輯器。）
 *如果您想了解vi文本編輯器，請[這裡是一個方便的教程]（https://www.tutorialspoint.com/unix/unix-vi-editor.htm）。
@@ -226,41 +225,23 @@ Rocky Linux提供了許多方法來設置網站。這只是使用Apache的一種
 [me@fedora01t rocky-docs]$ 
 ```
 
-# Using opencc library for Simplified Chinese and Traditional Chinese conversion
-
-opencc is very good at handling Simplified Chinese and Traditional Chinese conversion.
-
-* Install opencc library first.
-
-```
-[me@fedora01t rocky-docs]$ sudo dnf install -y opencc 
-```
-
-* Then opencc python front end.
-
-```
-pip3  install opencc-python-reimplemented
-```
-
-## convert zh-TW file into zh-CN
-
-
-```
- python3 -m opencc -c t2s -i /home/me/github/rocky-docs/stage/demo-opencc-origin.tc.md -o /tmp/demo-opencc-origin.sc.md
-```
-
-## convert zh-CN to zh-TW
-
-```
- python3 -m opencc -c s2t -i /home/me/github/rocky-docs/stage/demo-opencc-origin.sc.md -o /tmp/demo-opencc-origin.tc.md
-```
 # Automate the translation task by makefile
 ## TBC
-* t01
+
+* Example makefile
+
 ```
 TBC
 ```
+
+* automake your git commit by make
+```
+make commit                    # no argument will commit with default message text.
+make commit "testing message"  # adding commit message
+```
+
 * t02
+
 ```
 TBC
 ```
