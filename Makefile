@@ -133,5 +133,5 @@ clean:
 	-find . -type f -name *~  -exec rm -f {} \;
 
 ssh_public_private_keys.md:
-	${TRANS} file://./docs-style-guide/sample-documentation/advanced-docs.md   :zh-TW 
+	${TRANS} file://./en/rocky/8/guides/ssh_public_private_keys.md   :zh-TW  > ./en/rocky/8/guides/ssh_public_private_keys.zh-TW.md
 
