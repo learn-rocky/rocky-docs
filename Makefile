@@ -132,6 +132,9 @@ clean:
 	-find . -type f -name *.pyc -exec rm -f {} \;
 	-find . -type f -name *~  -exec rm -f {} \;
 
-ssh_public_private_keys.zh_TW.md:
-	${TRANS} file://./en/rocky/8/guides/ssh_public_private_keys.md   :zh-TW  > ./en/rocky/8/guides/ssh_public_private_keys.zh-TW.md
+ssh_public_private_keys.en.zh_TW.md:
+	${TRANS} file://./en/rocky/8/guides/ssh_public_private_keys.md   en:zh-TW  > ./en/rocky/8/guides/ssh_public_private_keys.zh-TW.md
+
+ssh_public_private_keys.en.zh_CN.md:
+	${TRANS} file://./en/rocky/8/guides/ssh_public_private_keys.md   en:zh-CN  > ./en/rocky/8/guides/ssh_public_private_keys.zh-CN.md
 
