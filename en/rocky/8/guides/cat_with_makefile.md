@@ -1,33 +1,43 @@
-# Assisted translation overview
-## WHAT: Using C.A.T software with makefile
+# Using C.A.T. software with makefile
 
-This guide is to utilize recent C.A.T. software for pre-processing language text into destination laguage.
-The translated language will need to be further review and corrected by human tranlator.
-Rocky document translator decides which approaches is best for their case.
+This guide is to utilize recent C.A.T. software to pre-translate computer related article into destination laguage.
+It is not to replace professional language translation service. The translated text from C.A.T. tool  will need to be further reviewed.
+Rocky document translators decide if this approach is really helpful.
 
-* Direct human translation path.
+
+* Direct human translation.
 
 ```
 Human writer --> a.txt --> Human Brain --> a.final.txt
 ```
 
-* Computer Assisted Translation path.
+* Computer Assisted Translation.
 
 ```
-Human writer --> a.txt --> CAT --> a.cat.txt--> Human Brain --> a.final.txt
+Human writer --> a.txt --> C.A.T. software --> a.cat.txt--> Human Brain --> a.final.txt
 ```
 
-## WHY:
+* Example of bad CAT translation
 
-* Save time in most case if using good tranlation engine.
-* Automating repeatable translation tasks as much as possible
+```
+[me@fedora01t rocky-docs]$ trans --brief zh-TW:en  "春風又綠江南岸"
+Spring breeze and green south bank of the river
+春     風     又  綠    南    岸          江
+[me@fedora01t rocky-docs]$
+
+```
+* Better translation of "春風又綠江南岸" by human brain.
+```
+"春風又綠江南岸" --> "Spring bring burgeoning green plant life to southern China."
+```
 
 
 ## Tools used in this doc
 
 * Google translate shell, a command line via translate.google.com API.
 * GNU Make, for task automation.
-* Dia, for digrams needed in document.
+* Dia, for authoring digrams to condense meanings into picture.
+* Git/Github, distributed sourcecode/text  management tool for a group.
 
 ## OS info
 ```
@@ -39,92 +49,6 @@ Release:	34
 Codename:	ThirtyFour
 [me@fedora01t ~]$ 
 ```
-
-## Using google translate command line tool
-
-
-* Install python googletrans version 3.1.0a0
-
-```
-pip3 install googletrans==3.1.0a0
-```
-* translate help 
-```
-
-[me@fedora01t bin]$ which translate
-~/.local/bin/translate
-[me@fedora01t bin]$ ~/.local/bin/translate -h
-usage: translate [-h] [-d DEST] [-s SRC] [-c] text
-
-Python Google Translator as a command-line tool
-
-positional arguments:
-  text                  The text you want to translate.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -d DEST, --dest DEST  The destination language you want to translate. (Default: en)
-  -s SRC, --src SRC     The source language you want to translate. (Default: auto)
-  -c, --detect
-[me@fedora01t bin]$
-	
-```
-
-# Examples from translate
-
-* Example 1: Translate Latin text to English.
-
-```
-[me@fedora01t rocky-docs]$ trans "veritas lux mea" -s la -d en 
-veritas lux mea
-
-The truth is my light
-
-Translations of veritas lux mea
-[ Latina -> English ]
-[me@fedora01t rocky-docs]$
-[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d ja
-[la] veritas lux mea
-    ->
-[ja] 真実は私の光です
-[pron.] Shinjitsu wa watashi no hikaridesu
-[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d zh-TW
-[la] veritas lux mea
-    ->
-[zh-TW] 事實是我的光
-[pron.] Shìshí shì wǒ de guāng
-[me@fedora01t rocky-docs]$ ~/.local/bin/translate "veritas lux mea" -s la -d zh-CN
-[la] veritas lux mea
-    ->
-[zh-CN] 事实是我的光
-[pron.] Shìshí shì wǒ de guāng
-[me@fedora01t rocky-docs]$ 
-```
-
-## Translate string of text from Simplified Chinese(zh-CN) to English
-
-```
-[me@fedora01t bin]$ ./translate -s zh-CN -d zh-TW  "服务器多站点设置"
-[zh-CN] 服务器多站点设置
-    ->
-[zh-TW] 服務器多站點設置
-[pron.] Fúwùqì duō zhàn diǎn shèzhì
-[me@fedora01t bin]$
-```
-
-## Translate string of text from  zh-CN to zh-TW
-
-```
-[me@fedora01t rocky-docs]$  trans  "服务器多站点设置" :zh-TW
-服务器多站点设置
-(Fúwùqì duō zhàndiǎn shèzhì)
-
-服務器多站點設置
-(Fúwùqì duō zhàn diǎn shèzhì)
-[me@fedora01t rocky-docs]$ 
-```
-
-# Using translate-shell
 
 ## Install translate-shell
 ```
@@ -159,9 +83,56 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 
 ```
 
-## Default backend is google translate engine with rate limitation. 
+# Using google translate command line tool, trans
 
-### Example output when free usage treshhold is reached.
+## Examples from trans tool
+
+* Example 1: Translate Latin text to English.
+
+```
+[me@fedora01t rocky-docs]$ trans "veritas lux mea"  la:en 
+veritas lux mea
+
+The truth is my light
+
+Translations of veritas lux mea
+[ Latina -> English ]
+[me@fedora01t rocky-docs]$
+```
+
+* Example 2: latin to japanese
+
+```
+[me@fedora01t rocky-docs]$ trans "veritas lux mea" la:ja
+veritas lux mea
+
+真実は私の光です
+(Shinjitsu wa watashi no hikaridesu)
+
+Translations of veritas lux mea
+[ Latina -> 日本語 ]
+
+veritas lux mea
+    真実は私の光です, 真実は、私の光であり、
+[me@fedora01t rocky-docs]$ 
+
+```
+
+*Example 3:  Text translated from Simplified Chinese(zh-CN) to Tranditional Chinese.
+
+```
+[me@fedora01t bin]$ trans zh-CN:zh-TW  "服务器多站点设置"
+[zh-CN] 服务器多站点设置
+    ->
+[zh-TW] 服務器多站點設置
+[pron.] Fúwùqì duō zhàn diǎn shèzhì
+[me@fedora01t bin]$
+
+```
+
+## Default trans backend is google translate engine with rate limit.
+
+### Example output when free usage threshhold is reached.
 ```
 [me@fedora01t rocky-docs]$ make file01
  /home/me/github/translate-shell/translate file:///home/me/github/rocky-docs/greet.txt :zh-TW
@@ -172,13 +143,16 @@ Report bugs to:       https://github.com/soimort/translate-shell/issues
 [me@fedora01t rocky-docs]$ trans --dump ...
 <snipped>
 <div style="font-size:13px;">
-Our systems have detected unusual traffic from your computer network.  Please try your request again later.  <a href="#" onclick="document.getElementById('infoDiv0').style.display='block';">Why did \
-this happen?</a><br><br>
+Our systems have detected unusual traffic from your computer network.
+Please try your request again later.
+<a href="#" onclick="document.getElementById('infoDiv0').style.display='block';">Why did this happen?</a><br><br>
 <snipped>
 [me@fedora01t rocky-docs]$
 
 ```
-* Translate greeting  text in file to other languages.
+
+* Translate greeting text in file to other languages.
+
 ```
 [me@fedora01t ]$ cat /home/me/github/rocky-docs/stage/greet.txt
 வணக்கம். எப்படி இருக்கீங்க?
@@ -194,32 +168,25 @@ Hello. How are you?
 [me@fedora01t rocky-docs]$
 ```
 
-### Translate rocky howto guide to zh-TW by trans.
+## Translate Rocky Howto Guides to zh-TW by trans.
 
+Following example may not finish the whole file translation if usage from your IP reach the limit.
 
 ```
 
-[me@fedora01t rocky-docs]$  trans file:///home/me/github/rocky-docs/stage/apache-sites-enabled.english.md  :zh-TW | head -20
+[me@fedora01t rocky-docs]$trans file:///home/me/github/rocky-docs/stage/apache-sites-enabled.english.md  :zh-TW | head -20
 ---
 標題：“ Apache Web服務器多站點設置”
 ---
 
 ＃Apache Web服務器多站點設置
 
-Rocky Linux提供了許多方法來設置網站。這只是使用Apache的一種方法，旨在用作單個服務器上的多站點設置。儘管此方法是為多站點服務器設計的，但它也可以作為單個站點服務器的基本配置。
+Rocky Linux提供了許多方法來設置網站。這只是使用Apache的一種方法，旨在用作單個服務器上的多站點設置。
+儘管此方法是為多站點服務器設計的，但它也可以作為單個站點服務器的基本配置。
 
 歷史事實：此服務器設置似乎已從基於Debian的系統開始，但它完全適用於任何運行Apache的Linux操作系統。
 
-##您需要什麼 
-*運行Rocky Linux的服務器
-*命令行和文本編輯器的知識（此示例使用* vi *，但可以適應您喜歡的編輯器。）
-*如果您想了解vi文本編輯器，請[這裡是一個方便的教程]（https://www.tutorialspoint.com/unix/unix-vi-editor.htm）。
-*有關安裝和運行Web服務的基本知識
 
-##安裝Apache
-您可能需要網站的其他軟件包。例如，幾乎肯定會需要一個PHP版本，也許還需要一個數據庫或其他軟件包。將PHP與httpd一起安裝將使您從Rocky Linux存儲庫中獲得最新版本。
-
-請記住，您可能還需要模塊，例如php-bcmath或php-mysqlind。您的Web應用程序規範應詳細說明所需的內容。這些可以隨時安裝。現在，我們將安裝httpd和PHP，因為它們幾乎已成定局：
   C-c C-c
   <snipped>
 [me@fedora01t rocky-docs]$ 
@@ -247,7 +214,6 @@ TBC
 ```
 
 # References
-* translate-shell: https://github.com/soimort/translate-shell
-* opencc
-* opencc-python-reimplemented
-* https://en.wikipedia.org/wiki/Computer-assisted_translation
+* R1: translate-shell,https://github.com/soimort/translate-shell
+   * More trans examples at https://github.com/soimort/translate-shell/blob/develop/README.md
+* R2: https://en.wikipedia.org/wiki/Computer-assisted_translation
