@@ -2,10 +2,10 @@
 
 ## 先決條件
 
-*從命令行運行一定程度的舒適感
-*安裝了* openssh *的Rocky Linux服務器和/或工作站
-*從技術上講，此過程可以在安裝了openssh的任何Linux系統上運行
-*可選：熟悉linux文件和目錄權限
+* 從命令行運行一定程度的舒適感
+* 安裝了* openssh *的Rocky Linux服務器和/或工作站
+* 從技術上講，此過程可以在安裝了openssh的任何Linux系統上運行
+* 可選：熟悉linux文件和目錄權限
 
 # 介紹
 
@@ -65,7 +65,7 @@ scp .ssh / id_rsa.pub root@web.ourourdomain.com：/ root /
 
 ls -a .ssh
 
-**重要的！請確保您仔細閱讀以下所有內容。如果不確定是否會破壞某些內容，請在每台計算機上製作一個authorized_keys（如果存在）的備份副本，然後繼續。**
+** 重要的！請確保您仔細閱讀以下所有內容。如果不確定是否會破壞某些內容，請在每台計算機上製作一個authorized_keys（如果存在）的備份副本，然後繼續。**
 
 如果沒有列出* authorized_keys *文件，那麼我們將在_ / root_目錄中輸入以下命令來創建該文件：
 
