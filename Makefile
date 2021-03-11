@@ -138,3 +138,9 @@ ssh_public_private_keys.en.zh_TW.md:
 ssh_public_private_keys.en.zh_CN.md:
 	${TRANS} file://./en/rocky/8/guides/ssh_public_private_keys.md   en:zh-CN  > ./en/rocky/8/guides/ssh_public_private_keys.zh-CN.md
 
+opencc-demo: Apache.zh-tw.md
+	@echo
+
+Apache.zh-tw.md:
+	python3 -m opencc -c s2t -i zh_cn/rocky/8/指南/Apache站点设置.md -o zh_tw/rocky/8/指南/Apache.zh-tw.md
+
