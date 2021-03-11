@@ -132,3 +132,6 @@ clean:
 	-find . -type f -name *.pyc -exec rm -f {} \;
 	-find . -type f -name *~  -exec rm -f {} \;
 
+ssh_public_private_keys.md:
+	${TRANS} file://./docs-style-guide/sample-documentation/advanced-docs.md   :zh-TW 
+
