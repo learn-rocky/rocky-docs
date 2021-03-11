@@ -1,6 +1,6 @@
-#Rocky Linux-SSH公鑰和私鑰
+# Rocky Linux-SSH公鑰和私鑰
 
-##先決條件
+## 先決條件
 
 *從命令行運行一定程度的舒適感
 *安裝了* openssh *的Rocky Linux服務器和/或工作站
@@ -15,7 +15,7 @@ SSH是一種協議，通常用於通過命令行從另一台計算機訪問另�
 
 本文檔將指導您完成使用上述密鑰創建密鑰和設置服務器以方便訪問的過程。
 
-###生成密鑰的過程
+### 生成密鑰的過程
 
 以下命令都是從Rocky Linux工作站上的命令行執行的：
 
@@ -81,7 +81,7 @@ ls -a .ssh
 
 rm id_rsa.pub
 
-### SSH目錄和authorized_keys安全
+###  SSH目錄和authorized_keys安全
 
 在每台目標計算機上，確保應用以下權限：
 
